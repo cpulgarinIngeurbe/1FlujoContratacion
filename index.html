@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIMELINE - CONSTRUCTOR DE PROYECTOS</title>
+    <title>FLUJO DE CONTRATACIÓN, ESCENARIOS DE OPTIMIZACION</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -797,20 +797,8 @@
     </div>
 
     <script>
-        // Datos de actividades por pestaña
-        const activitiesByTab = {
-            'optimista': [],
-            'srm-automatizacion': [],
-            'srm-validado': []
-        };
-
-        const tabConfig = {
-            'optimista': 'Proceso Actual (91 días)',
-            'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)',
-            'srm-validado': 'Proceso Validado SRM+Automatización (47 días)',
-            'comparativo': 'Comparativo Escenarios'
-        };
-
+        const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': []};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (47 días)', 'comparativo': 'Comparativo Escenarios'};
         let currentTab = 'optimista';
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
@@ -820,31 +808,13 @@
             try {
                 localStorage.setItem('activitiesByTab', JSON.stringify(activitiesByTab));
             } catch (e) {
-                // localStorage no disponible (file:// protocol), los datos se mantienen en memoria
                 console.log('localStorage no disponible, datos en memoria');
             }
         }
 
         function initializeDefaultData() {
-            // Datos iniciales de ejemplo con relaciones fin-inicio correctas
-            activitiesByTab['optimista'] = [
-                {id: '1', pestaña: 'optimista', capitulo: 'CALCULO DE CANTIDADES', nombreActividad: 'CALCULO DE CANTIDADES', duracion: 7, area: 'DIRECTOR', actividadRelacionada: '', tipoRelacion: '', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 1},
-                {id: '2', pestaña: 'optimista', capitulo: '', nombreActividad: 'PLIEGO DE LICITACIÓN REDES', duracion: 1, area: 'COSTOS_CONSTRUCCION', actividadRelacionada: '1', tipoRelacion: 'fin-inicio', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 8},
-                {id: '3', pestaña: 'optimista', capitulo: '', nombreActividad: 'LICITACIONES', duracion: 1, area: 'DIRECTOR', actividadRelacionada: '2', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 9},
-                {id: '4', pestaña: 'optimista', capitulo: '', nombreActividad: 'RECIBO DE COTIZACIÓN', duracion: 7, area: 'DIRECTOR', actividadRelacionada: '3', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 10}
-            ];
-            activitiesByTab['srm-automatizacion'] = [
-                {id: '1', pestaña: 'srm-automatizacion', capitulo: 'CALCULO DE CANTIDADES', nombreActividad: 'CALCULO DE CANTIDADES', duracion: 5, area: 'DIRECTOR', actividadRelacionada: '', tipoRelacion: '', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 1},
-                {id: '2', pestaña: 'srm-automatizacion', capitulo: '', nombreActividad: 'PLIEGO DE LICITACIÓN REDES', duracion: 1, area: 'COSTOS_CONSTRUCCION', actividadRelacionada: '1', tipoRelacion: 'fin-inicio', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 6},
-                {id: '3', pestaña: 'srm-automatizacion', capitulo: '', nombreActividad: 'LICITACIONES (OPTIMIZADO)', duracion: 1, area: 'DIRECTOR', actividadRelacionada: '2', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 7},
-                {id: '4', pestaña: 'srm-automatizacion', capitulo: '', nombreActividad: 'RECIBO DE COTIZACIÓN', duracion: 4, area: 'DIRECTOR', actividadRelacionada: '3', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 8}
-            ];
-            activitiesByTab['srm-validado'] = [
-                {id: '1', pestaña: 'srm-validado', capitulo: 'CALCULO DE CANTIDADES', nombreActividad: 'CALCULO DE CANTIDADES', duracion: 6, area: 'DIRECTOR', actividadRelacionada: '', tipoRelacion: '', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 1},
-                {id: '2', pestaña: 'srm-validado', capitulo: '', nombreActividad: 'PLIEGO DE LICITACIÓN REDES', duracion: 1, area: 'COSTOS_CONSTRUCCION', actividadRelacionada: '1', tipoRelacion: 'fin-inicio', holgura: 0, categoria: '', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 7},
-                {id: '3', pestaña: 'srm-validado', capitulo: '', nombreActividad: 'LICITACIONES (VALIDADO)', duracion: 1, area: 'DIRECTOR', actividadRelacionada: '2', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 8},
-                {id: '4', pestaña: 'srm-validado', capitulo: '', nombreActividad: 'RECIBO DE COTIZACIÓN', duracion: 5, area: 'DIRECTOR', actividadRelacionada: '3', tipoRelacion: 'fin-inicio', holgura: 0, categoria: 'SRM', observaciones: '', enfasis: false, hitoContinuo: false, startDay: 9}
-            ];
+            const defaultData = {"optimista":[{"id":"1","pestaña":"optimista","capitulo":"CALCULO DE CANTIDADES","nombreActividad":"CALCULO DE CANTIDADES","duracion":7,"area":"DIRECTOR","actividadRelacionada":"","tipoRelacion":"","categoria":"","observaciones":"","enfasis":false,"startDay":1,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"PLIEGO DE LICITACIÓN REDES","duracion":0,"area":"DIRECTOR","id":"2","actividadRelacionada":"1","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":8,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"LICITACIONES","duracion":1,"area":"DIRECTOR","id":"3","actividadRelacionada":"1","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":8,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"RECIBO DE COTIZACIÓN","duracion":7,"area":"DIRECTOR","id":"4","actividadRelacionada":"3","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":9,"holgura":0},{"pestaña":"optimista","capitulo":"CUADRO COMPARATIVO","nombreActividad":"REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL","duracion":7,"area":"DIRECTOR","id":"5","actividadRelacionada":"4","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":16,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"REVISIÓN POR ÁREA DE CONTROL DE COSTOS","duracion":7,"area":"CONTROL_COSTOS","id":"6","actividadRelacionada":"5","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":23,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"CONCILIACIÓN","duracion":5,"area":"CONTROL_COSTOS","id":"7","actividadRelacionada":"6","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":30,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"CONCILIACIÓN CON PPTO, TECNICO, DISEÑO","duracion":5,"area":"CONTROL_COSTOS","id":"8","actividadRelacionada":"7","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":35,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"PRESENTACIÓN CUADRO COMPARATIVO COMITÉ","duracion":7,"area":"COMITE","id":"9","actividadRelacionada":"8","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":40,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":7,"area":"DIRECTOR","id":"10","actividadRelacionada":"9","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":47,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"CREACIÓN DE TERCERO","duracion":7,"area":"ADMINISTRATIVO","id":"11","actividadRelacionada":"10","tipoRelacion":"fin-fin","categoria":"","observaciones":"","enfasis":false,"startDay":47,"holgura":0},{"pestaña":"optimista","capitulo":"SOLICITUD DE CONTRATACION","nombreActividad":"REALIZAR SOLICITUD DE CONTRATO","duracion":2,"area":"DIRECTOR","id":"12","actividadRelacionada":"11","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":54,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"PROYECCIÓN","duracion":7,"area":"CONTROL_COSTOS","id":"13","actividadRelacionada":"12","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":56,"holgura":0},{"pestaña":"optimista","capitulo":"ELABORACION DE CONTRATO","nombreActividad":"MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO","duracion":1,"area":"ADMINISTRATIVO","id":"14","actividadRelacionada":"13","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":63,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"APROBACIÓN EN SINCO","duracion":2,"area":"DIRECTOR","id":"15","actividadRelacionada":"14","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":64,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"IMPRESIÓN DIGITAL","duracion":1,"area":"ADMINISTRATIVO","id":"16","actividadRelacionada":"15","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":66,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":7,"area":"ADMINISTRATIVO","id":"17","actividadRelacionada":"16","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":67,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"TRÁMITE, RECEPCIÓN Y REVISIÓN PÓLIZAS","duracion":7,"area":"CONTRATISTA","id":"18","actividadRelacionada":"17","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":74,"holgura":0},{"pestaña":"optimista","capitulo":"PERFECCIONAMIENTO DE CONTRATO","nombreActividad":"ENVÍO A CONTROL INTERNO","duracion":1,"area":"ADMINISTRATIVO","id":"19","actividadRelacionada":"18","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":81,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"LISTA DE CHEQUEO CONTROL INTERNO","duracion":2,"area":"CONTROL_INTERNO","id":"20","actividadRelacionada":"19","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":82,"holgura":0},{"pestaña":"optimista","capitulo":"CORTES DE OBRA","nombreActividad":"PREACTAS DIGITALES","duracion":7,"area":"DIRECTOR","id":"21","actividadRelacionada":"20","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":84,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"ACTA DE OBRA Y FACTURACIÓN","duracion":7,"area":"ADMINISTRATIVO","id":"22","actividadRelacionada":"21","tipoRelacion":"inicio-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":84,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"PROGRAMACIÓN Y APROBACIÓN","duracion":7,"area":"DIRECTOR","id":"23","actividadRelacionada":"22","tipoRelacion":"inicio-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":84,"holgura":0},{"pestaña":"optimista","capitulo":"","nombreActividad":"PROGRAMACIÓN DE PAGOS","duracion":7,"area":"ADMINISTRATIVO","id":"24","actividadRelacionada":"23","tipoRelacion":"inicio-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":84,"holgura":0},{"pestaña":"optimista","capitulo":"PAGOS","nombreActividad":"VERIFICACIÓN DE PAGOS","duracion":1,"area":"ADMINISTRATIVO","id":"25","actividadRelacionada":"24","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":91,"holgura":0}],"srm-automatizacion":[{"pestaña":"srm-automatizacion","capitulo":"CALCULO DE CANTIDADES","nombreActividad":"CALCULO DE CANTIDADES","duracion":4,"area":"DIRECTOR","id":"1","actividadRelacionada":"","tipoRelacion":"inicio-inicio","categoria":"BIM","observaciones":"","enfasis":false,"startDay":1,"holgura":0},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"PLIEGO DE LICITACIÓN REDES","duracion":0,"area":"DIRECTOR","id":"2","actividadRelacionada":"1","tipoRelacion":"fin-inicio","categoria":"","observaciones":"","enfasis":false,"startDay":5,"holgura":0},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"LICITACIONES","duracion":1,"area":"DIRECTOR","id":"3","actividadRelacionada":"1","tipoRelacion":"fin-inicio","categoria":"SRM","observaciones":"","enfasis":false,"startDay":5,"holgura":0},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"RECIBO DE COTIZACIÓN","duracion":7,"area":"DIRECTOR","id":"4","actividadRelacionada":"3","tipoRelacion":"fin-inicio","categoria":"SRM","observaciones":"","enfasis":false,"startDay":6,"holgura":0},{"pestaña":"srm-automatizacion","capitulo":"CUADRO COMPARATIVO","nombreActividad":"REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL","duracion":1,"area":"DIRECTOR","id":"5","actividadRelacionada":"4","tipoRelacion":"fin-inicio","categoria":"SRM","observaciones":"","enfasis":false,"startDay":13,"holgura":0},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"REVISIÓN POR ÁREA DE CONTROL DE COSTOS","duracion":4,"area":"CONTROL_COSTOS","id":"6","actividadRelacionada":"1","tipoRelacion":"inicio-inicio","holgura":1,"categoria":"","observaciones":"","enfasis":false,"startDay":2},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"CONCILIACIÓN","duracion":4,"area":"CONTROL_COSTOS","id":"7","actividadRelacionada":"6","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"startDay":2},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"CONCILIACIÓN CON PPTO, TECNICO, DISEÑO","duracion":100,"area":"CONTROL_COSTOS","id":"8","actividadRelacionada":"1","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":true,"startDay":1},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"PRESENTACIÓN CUADRO COMPARATIVO COMITÉ","duracion":7,"area":"COMITE","id":"9","actividadRelacionada":"5","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":14},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":0,"area":"DIRECTOR","id":"10","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"CREACIÓN DE TERCERO","duracion":4,"area":"ADMINISTRATIVO","id":"11","actividadRelacionada":"7","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":2},{"pestaña":"srm-automatizacion","capitulo":"SOLICITUD DE CONTRATACION","nombreActividad":"REALIZAR SOLICITUD DE CONTRATO","duracion":0,"area":"DIRECTOR","id":"12","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"PROYECCIÓN","duracion":4,"area":"CONTROL_COSTOS","id":"13","actividadRelacionada":"11","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":2},{"pestaña":"srm-automatizacion","capitulo":"ELABORACION DE CONTRATO","nombreActividad":"MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO","duracion":1,"area":"ADMINISTRATIVO","id":"14","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"APROBACIÓN EN SINCO","duracion":1,"area":"DIRECTOR","id":"15","actividadRelacionada":"14","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":22},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"IMPRESIÓN DIGITAL, DEPENDE DE LA CANTIDAD DE CONTRATOS ( MINUTAS)","duracion":1,"area":"ADMINISTRATIVO","id":"16","actividadRelacionada":"15","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":23},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":2,"area":"ADMINISTRATIVO","id":"17","actividadRelacionada":"16","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":24},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"TRÁMITE, RECEPCIÓN Y REVISIÓN PÓLIZAS","duracion":7,"area":"CONTRATISTA","id":"18","actividadRelacionada":"17","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":26},{"pestaña":"srm-automatizacion","capitulo":"PERFECCIONAMIENTO DE CONTRATO","nombreActividad":"ENVÍO A CONTROL INTERNO","duracion":7,"area":"ADMINISTRATIVO","id":"19","actividadRelacionada":"18","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":26},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"LISTA DE CHEQUEO CONTROL INTERNO","duracion":1,"area":"CONTROL_INTERNO","id":"20","actividadRelacionada":"19","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":33},{"pestaña":"srm-automatizacion","capitulo":"CORTES DE OBRA","nombreActividad":"PREACTAS DIGITALES","duracion":7,"area":"DIRECTOR","id":"21","actividadRelacionada":"20","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":34},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"ACTA DE OBRA Y FACTURACIÓN","duracion":7,"area":"ADMINISTRATIVO","id":"22","actividadRelacionada":"21","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":34},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"PROGRAMACIÓN Y APROBACIÓN","duracion":7,"area":"DIRECTOR","id":"23","actividadRelacionada":"22","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":34},{"pestaña":"srm-automatizacion","capitulo":"","nombreActividad":"PROGRAMACIÓN DE PAGOS","duracion":7,"area":"ADMINISTRATIVO","id":"24","actividadRelacionada":"23","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":34},{"pestaña":"srm-automatizacion","capitulo":"PAGOS","nombreActividad":"VERIFICACIÓN DE PAGOS","duracion":0,"area":"ADMINISTRATIVO","id":"25","actividadRelacionada":"24","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":41}],"srm-validado":[{"pestaña":"srm-validado","capitulo":"CALCULO DE CANTIDADES","nombreActividad":"CALCULO DE CANTIDADES","duracion":4,"area":"DIRECTOR","id":"1","actividadRelacionada":"","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"BIM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":1},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"PLIEGO DE LICITACIÓN","duracion":2,"area":"COSTOS_CONSTRUCCION","id":"2","actividadRelacionada":"1","tipoRelacion":"fin-fin","holgura":0,"categoria":"","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":3},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"LICITACIONES","duracion":1,"area":"DIRECTOR","id":"3","actividadRelacionada":"2","tipoRelacion":"fin-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":5},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"RECIBO DE COTIZACIÓN","duracion":7,"area":"DIRECTOR","id":"4","actividadRelacionada":"3","tipoRelacion":"fin-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":6},{"pestaña":"srm-validado","capitulo":"CUADRO COMPARATIVO","nombreActividad":"REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL","duracion":1,"area":"DIRECTOR","id":"5","actividadRelacionada":"4","tipoRelacion":"fin-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":13},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"REVISIÓN Y PROYECCIÓN POR ÁREA DE CONTROL DE COSTOS","duracion":5,"area":"CONTROL_COSTOS","id":"6","actividadRelacionada":"5","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":14},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"CONCILIACIÓN","duracion":0,"area":"CONTROL_COSTOS","id":"7","actividadRelacionada":"6","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":14},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"CONCILIACIÓN CON PPTO, TECNICO, DISEÑO","duracion":100,"area":"CONTROL_COSTOS","id":"8","actividadRelacionada":"","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":true,"startDay":1},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"PRESENTACIÓN CUADRO COMPARATIVO COMITÉ","duracion":7,"area":"COMITE","id":"9","actividadRelacionada":"6","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":14},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"ADJUDICACIÓN","duracion":0,"area":"DIRECTOR","id":"10","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":0,"area":"DIRECTOR","id":"11","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"CREACIÓN DE TERCERO","duracion":4,"area":"ADMINISTRATIVO","id":"12","actividadRelacionada":"1","tipoRelacion":"inicio-inicio","holgura":1,"categoria":"SRM","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":2},{"pestaña":"srm-validado","capitulo":"SOLICITUD DE CONTRATACION","nombreActividad":"ADJUDICACIÓN PARA LLEVAR A ADPRO","duracion":0,"area":"DIRECTOR","id":"13","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"SRM","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"PROYECCIÓN","duracion":5,"area":"CONTROL_COSTOS","id":"14","actividadRelacionada":"9","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":true,"hitoContinuo":false,"startDay":21},{"pestaña":"srm-validado","capitulo":"ELABORACION DE CONTRATO","nombreActividad":"MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO","duracion":1,"area":"ADMINISTRATIVO","id":"15","actividadRelacionada":"14","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":26},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"APROBACIÓN EN SINCO","duracion":1,"area":"DIRECTOR","id":"16","actividadRelacionada":"15","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":27},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"IMPRESIÓN DIGITAL, DEPENDE DE LA CANTIDAD DE CONTRATOS ( MINUTAS)","duracion":1,"area":"ADMINISTRATIVO","id":"17","actividadRelacionada":"16","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":28},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"FIRMA ZOHO","duracion":2,"area":"ADMINISTRATIVO","id":"18","actividadRelacionada":"17","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":29},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"TRÁMITE, RECEPCIÓN Y REVISIÓN PÓLIZAS","duracion":7,"area":"CONTRATISTA","id":"19","actividadRelacionada":"18","tipoRelacion":"fin-inicio","holgura":0,"categoria":"IA-TECNOLOGIA","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":31},{"pestaña":"srm-validado","capitulo":"PERFECCIONAMIENTO DE CONTRATO","nombreActividad":"ENVÍO A CONTROL INTERNO","duracion":7,"area":"ADMINISTRATIVO","id":"20","actividadRelacionada":"19","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":31},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"LISTA DE CHEQUEO CONTROL INTERNO","duracion":1,"area":"CONTROL_INTERNO","id":"21","actividadRelacionada":"20","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":38},{"pestaña":"srm-validado","capitulo":"CORTES DE OBRA","nombreActividad":"PREACTAS DIGITALES","duracion":7,"area":"DIRECTOR","id":"22","actividadRelacionada":"21","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":39},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"ACTA DE OBRA Y FACTURACIÓN","duracion":7,"area":"ADMINISTRATIVO","id":"23","actividadRelacionada":"22","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":39},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"PROGRAMACIÓN Y APROBACIÓN","duracion":7,"area":"DIRECTOR","id":"24","actividadRelacionada":"23","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":39},{"pestaña":"srm-validado","capitulo":"","nombreActividad":"PROGRAMACIÓN DE PAGOS","duracion":7,"area":"ADMINISTRATIVO","id":"25","actividadRelacionada":"24","tipoRelacion":"inicio-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":39},{"pestaña":"srm-validado","capitulo":"PAGOS","nombreActividad":"VERIFICACIÓN DE PAGOS","duracion":0,"area":"ADMINISTRATIVO","id":"26","actividadRelacionada":"25","tipoRelacion":"fin-inicio","holgura":0,"categoria":"","observaciones":"","enfasis":false,"hitoContinuo":false,"startDay":46}]};
+            Object.assign(activitiesByTab, defaultData);
         }
 
         function loadFromLocalStorage() {
@@ -858,70 +828,47 @@
                         initializeDefaultData();
                     }
                 } else {
-                    // Si no hay datos guardados, inicializar con datos de ejemplo
                     initializeDefaultData();
                 }
             } catch (e) {
-                // localStorage no disponible (file:// protocol), usar datos de ejemplo
                 console.log('localStorage no disponible, usando datos de ejemplo');
                 initializeDefaultData();
             }
         }
 
-        // Colores para diferentes áreas
-        const colorMap = {
-            'DIRECTOR': '#3498db',
-            'CONTROL_COSTOS': '#e74c3c',
-            'ADMINISTRATIVO': '#2ecc71',
-            'COMITE': '#f39c12',
-            'CONTRATISTA': '#9b59b6',
-            'TECNICO': '#1abc9c',
-            'COSTOS_CONSTRUCCION': '#d4a574',
-            'CONTROL_INTERNO': '#34495e'
-        };
+        const colorMap = {'DIRECTOR': '#3498db', 'CONTROL_COSTOS': '#e74c3c', 'ADMINISTRATIVO': '#2ecc71', 'COMITE': '#f39c12', 'CONTRATISTA': '#9b59b6', 'TECNICO': '#1abc9c', 'COSTOS_CONSTRUCCION': '#d4a574', 'CONTROL_INTERNO': '#34495e'};
 
         function getColorForArea(area) {
             return colorMap[area] || '#34495e';
         }
 
         function calculateStartDays(activities) {
-            // Inicializar todas las actividades
             activities.forEach(act => {
                 act.startDay = act.startDay || 1;
                 act.holgura = act.holgura || 0;
             });
-
-            // Hacer múltiples pasadas para resolver dependencias en cascada
             for (let pass = 0; pass < activities.length; pass++) {
                 activities.forEach(act => {
-                    // Si tiene relación y tipo de relación configurado
                     if (act.actividadRelacionada && act.tipoRelacion && act.tipoRelacion !== '') {
                         const predecesora = activities.find(a => a.id === act.actividadRelacionada);
                         if (predecesora) {
                             const predStartDay = predecesora.startDay || 1;
                             const predDuracion = predecesora.duracion || 0;
                             const holgura = act.holgura || 0;
-
                             switch (act.tipoRelacion) {
                                 case 'fin-inicio':
-                                    // La actividad comienza después de que termina la predecesora + holgura
-                                    // Si holgura es positiva, adelanta; si es negativa, atrasa
                                     act.startDay = predStartDay + predDuracion + holgura;
                                     break;
                                 case 'inicio-inicio':
-                                    // Comienza cuando comienza la predecesora + holgura
                                     act.startDay = predStartDay + holgura;
                                     break;
                                 case 'fin-fin':
-                                    // Termina cuando termina la predecesora + holgura
                                     act.startDay = predStartDay + predDuracion - (act.duracion || 0) + holgura;
                                     break;
                                 case 'inicio-fin':
-                                    // Termina cuando comienza la predecesora + holgura
                                     act.startDay = predStartDay - (act.duracion || 0) + holgura;
                                     break;
                             }
-                            // Asegurar que startDay no sea menor que 1
                             act.startDay = Math.max(1, act.startDay);
                         }
                     }
@@ -932,7 +879,6 @@
         function initTabs() {
             const tabsContainer = document.getElementById('tabsContainer');
             tabsContainer.innerHTML = '';
-
             Object.keys(tabConfig).forEach(tabId => {
                 const button = document.createElement('button');
                 button.className = `tab-button ${tabId === currentTab ? 'active' : ''}`;
@@ -958,33 +904,25 @@
         function renderScenarios() {
             const wrapper = document.getElementById('scenariosWrapper');
             wrapper.innerHTML = '';
-
             const scenario = document.createElement('div');
             scenario.className = 'scenario-container active';
-
             if (currentTab === 'comparativo') {
                 renderComparativo(scenario);
             } else {
                 const container = document.createElement('div');
                 container.className = 'container';
-
                 const activities = activitiesByTab[currentTab] || [];
-
                 if (activities.length === 0) {
                     container.innerHTML = '<div class="empty-state">No hay actividades. Haz clic en "AGREGAR ACTIVIDAD" para comenzar.</div>';
                 } else {
                     renderBothViews(container, activities);
                 }
-
                 scenario.appendChild(container);
-
-                // Configurar sincronización de scroll y tooltips después de renderizar
                 setTimeout(() => {
                     setupScrollSync();
                     setupTooltips();
                 }, 100);
             }
-
             wrapper.appendChild(scenario);
         }
 
@@ -994,16 +932,12 @@
             container.style.flexDirection = 'column';
             container.style.flex = '1';
             container.style.overflow = 'hidden';
-
-            // Controles para seleccionar pestañas a comparar
             const controlsDiv = document.createElement('div');
             controlsDiv.className = 'comparativo-controls';
-
             const label1 = document.createElement('label');
             label1.textContent = 'Escenario 1:';
             label1.style.fontWeight = 'bold';
             label1.style.fontSize = '13px';
-
             const select1 = document.createElement('select');
             select1.id = 'selectComparativoTab1';
             Object.entries(tabConfig).forEach(([key, value]) => {
@@ -1019,13 +953,11 @@
                 comparativoTab1 = e.target.value;
                 renderScenarios();
             });
-
             const label2 = document.createElement('label');
             label2.textContent = 'Escenario 2:';
             label2.style.fontWeight = 'bold';
             label2.style.fontSize = '13px';
             label2.style.marginLeft = '30px';
-
             const select2 = document.createElement('select');
             select2.id = 'selectComparativoTab2';
             Object.entries(tabConfig).forEach(([key, value]) => {
@@ -1041,58 +973,36 @@
                 comparativoTab2 = e.target.value;
                 renderScenarios();
             });
-
             const group1 = document.createElement('div');
             group1.className = 'comparativo-control-group';
             group1.appendChild(label1);
             group1.appendChild(select1);
-
             const group2 = document.createElement('div');
             group2.className = 'comparativo-control-group';
             group2.appendChild(label2);
             group2.appendChild(select2);
-
             controlsDiv.appendChild(group1);
             controlsDiv.appendChild(group2);
             container.appendChild(controlsDiv);
-
-            // Agregar leyenda
             const legendDiv = document.createElement('div');
             legendDiv.className = 'legend';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {
-                    'DIRECTOR': 'Director de Obra y Residentes',
-                    'CONTROL_COSTOS': 'Control de Costos',
-                    'ADMINISTRATIVO': 'Administrativo',
-                    'COMITE': 'Comité',
-                    'CONTRATISTA': 'Contratista',
-                    'TECNICO': 'Técnico/Presupuesto',
-                    'COSTOS_CONSTRUCCION': 'Costos/Construcción',
-                    'CONTROL_INTERNO': 'Control Interno'
-                };
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
                 const legendItem = document.createElement('div');
                 legendItem.className = 'legend-item';
-
                 const colorDiv = document.createElement('div');
                 colorDiv.className = 'legend-color';
                 colorDiv.style.backgroundColor = color;
-
                 const labelSpan = document.createElement('span');
                 labelSpan.style.fontSize = '12px';
                 labelSpan.textContent = labels[key];
-
                 legendItem.appendChild(colorDiv);
                 legendItem.appendChild(labelSpan);
                 legendDiv.appendChild(legendItem);
             });
             container.appendChild(legendDiv);
-
-            // Renderizar el comparativo con columna izquierda compartida
             renderComparativoLayout(container);
-
             scenario.appendChild(container);
-
-            // Configurar sincronización de scroll y tooltips
             setTimeout(() => {
                 setupScrollSyncComparativo();
                 setupTooltips();
@@ -1102,64 +1012,25 @@
         function renderComparativoLayout(container) {
             let activities1 = activitiesByTab[comparativoTab1] || [];
             let activities2 = activitiesByTab[comparativoTab2] || [];
-
-            // Ordenar actividades
-            activities1 = [...activities1].sort((a, b) => {
-                const aNum = parseInt(a.id.replace(/\D/g, '')) || 0;
-                const bNum = parseInt(b.id.replace(/\D/g, '')) || 0;
-                if (aNum !== bNum) return aNum - bNum;
-                return a.id.localeCompare(b.id);
-            });
-
-            activities2 = [...activities2].sort((a, b) => {
-                const aNum = parseInt(a.id.replace(/\D/g, '')) || 0;
-                const bNum = parseInt(b.id.replace(/\D/g, '')) || 0;
-                if (aNum !== bNum) return aNum - bNum;
-                return a.id.localeCompare(b.id);
-            });
-
-            // Combinar IDs únicos de ambos escenarios
+            activities1 = [...activities1].sort((a, b) => {const aNum = parseInt(a.id.replace(/\D/g, '')) || 0; const bNum = parseInt(b.id.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.id.localeCompare(b.id);});
+            activities2 = [...activities2].sort((a, b) => {const aNum = parseInt(a.id.replace(/\D/g, '')) || 0; const bNum = parseInt(b.id.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.id.localeCompare(b.id);});
             const allIds = new Set();
             activities1.forEach(act => allIds.add(act.id));
             activities2.forEach(act => allIds.add(act.id));
-
-            const sortedIds = Array.from(allIds).sort((a, b) => {
-                const aNum = parseInt(a.replace(/\D/g, '')) || 0;
-                const bNum = parseInt(b.replace(/\D/g, '')) || 0;
-                if (aNum !== bNum) return aNum - bNum;
-                return a.localeCompare(b);
-            });
-
-            // Crear mapa de actividades por ID para ambos escenarios
-            const map1 = {};
-            activities1.forEach(act => { map1[act.id] = act; });
-            const map2 = {};
-            activities2.forEach(act => { map2[act.id] = act; });
-
-            // Crear lista combinada para la columna izquierda y los timelines
+            const sortedIds = Array.from(allIds).sort((a, b) => {const aNum = parseInt(a.replace(/\D/g, '')) || 0; const bNum = parseInt(b.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.localeCompare(b);});
+            const map1 = {}; activities1.forEach(act => { map1[act.id] = act; });
+            const map2 = {}; activities2.forEach(act => { map2[act.id] = act; });
             const activities = sortedIds.map(id => map1[id] || map2[id]).filter(Boolean);
-
-            // Calcular startDays para ambos escenarios
             calculateStartDays(activities1);
             calculateStartDays(activities2);
-
             let maxDays1 = 0;
-            activities1.forEach(act => {
-                maxDays1 = Math.max(maxDays1, (act.startDay || 1) + (act.duracion || 0));
-            });
+            activities1.forEach(act => {maxDays1 = Math.max(maxDays1, (act.startDay || 1) + (act.duracion || 0));});
             maxDays1 = Math.max(maxDays1, 50);
-
             let maxDays2 = 0;
-            activities2.forEach(act => {
-                maxDays2 = Math.max(maxDays2, (act.startDay || 1) + (act.duracion || 0));
-            });
+            activities2.forEach(act => {maxDays2 = Math.max(maxDays2, (act.startDay || 1) + (act.duracion || 0));});
             maxDays2 = Math.max(maxDays2, 50);
-
             const maxDays = Math.max(maxDays1, maxDays2);
-
             let html = '<div style="display: flex; flex-direction: column; flex: 1; overflow: hidden;">';
-
-            // Headers (sticky) - usando 6 píxeles por día para que quepa en una vista
             const pixelsPerDay = 6;
             const contentWidth = maxDays * pixelsPerDay + 40;
             html += '<div style="display: flex; flex-shrink: 0; gap: 0;">';
@@ -1176,36 +1047,20 @@
             html += '<div style="width: ' + contentWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; justify-content: flex-start; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; overflow-x: auto;">' + Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: ${pixelsPerDay}px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('') + '</div>';
             html += '</div>';
             html += '</div></div>';
-
-            // Contenedor de scroll
             html += '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;">';
-
-            // Columna izquierda con nombres de actividades
             html += '<div class="escala-labels" style="width: 300px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; border-right: 1px solid #ddd;">';
-
             activities.forEach((act, idx) => {
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; padding: 8px; display: flex; align-items: center;">
-                    <div style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'}; font-size: 11px;">${act.nombreActividad}</div>
-                </div>`;
+                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; padding: 8px; display: flex; align-items: center;"><div style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'}; font-size: 11px;">${act.nombreActividad}</div></div>`;
             });
             html += '</div>';
-
-            // Contenedor de timelines lado a lado (sin scroll horizontal en el contenedor)
             html += '<div style="display: flex; flex: 1; overflow: hidden; gap: 0; min-width: 0;" id="comparativoTimelineContainer">';
-
-            // Timeline Escenario 1 (con scroll horizontal independiente)
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; border-right: 2px solid #ddd;" class="escenario-panel" id="escenario1Panel">';
             html += renderComparativoTimeline(activities, activities1, maxDays, 'escenario1', maxDays);
             html += '</div>';
-
-            // Timeline Escenario 2 (con scroll horizontal independiente)
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden;" class="escenario-panel" id="escenario2Panel">';
             html += renderComparativoTimeline(activities, activities2, maxDays, 'escenario2', maxDays);
             html += '</div>';
-
             html += '</div></div></div>';
-
-            // Crear un contenedor temporal para el HTML sin perder los event listeners
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
             while (tempDiv.firstChild) {
@@ -1214,77 +1069,42 @@
         }
 
         function renderComparativoTimeline(allActivities, scenarioActivities, maxDays, escenarioId, calculatedMaxDays) {
-            // Crear mapa de actividades del escenario específico
-            const scenarioMap = {};
-            scenarioActivities.forEach(act => { scenarioMap[act.id] = act; });
-
+            const scenarioMap = {}; scenarioActivities.forEach(act => { scenarioMap[act.id] = act; });
             const pixelsPerDay = 6;
             const contentWidth = maxDays * pixelsPerDay + 40;
-
-            // Contenedor de scroll del timeline - ajusta el ancho para encajar en el espacio disponible
             let html = '<div class="escala" data-escenario-id="' + escenarioId + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
-
-            // Grid lines
             html += '<div class="grid-lines" style="position: absolute; top: 0; left: 0; width: ' + contentWidth + 'px; height: 100%; pointer-events: none; display: flex; z-index: 0;">';
             for (let i = 0; i < Math.ceil(maxDays/2); i++) {
                 html += '<div class="grid-line" style="width: ' + (pixelsPerDay * 2) + 'px; height: 100%; border-right: 1px dotted rgba(150, 150, 150, 0.25); box-sizing: border-box;"></div>';
             }
             html += '</div>';
-
-            // Iterar sobre todas las actividades combinadas
             allActivities.forEach((act, idx) => {
-                // Obtener los datos de esta actividad del escenario específico
                 const scenarioAct = scenarioMap[act.id];
-
-                // Si la actividad no existe en este escenario, mostrar fila vacía
                 if (!scenarioAct) {
-                    html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px;">
-                        <div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div>
-                    </div>`;
+                    html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div></div>`;
                     return;
                 }
-
-                // Usar los datos de scenarioAct en lugar de act
                 act = scenarioAct;
                 const startDay = act.startDay || 1;
                 const endDay = act.duracion > 0 ? startDay + act.duracion - 1 : startDay;
                 const color = getColorForArea(act.area);
                 let barContent = '';
-
                 const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
-
                 if (act.duracion === 0) {
-                    barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * pixelsPerDay - 6}px; background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);">
-                        <div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div>
-                    </div>${categoriaBadge}`;
+                    barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * pixelsPerDay - 6}px; background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div></div>${categoriaBadge}`;
                 } else if (act.hitoContinuo) {
-                    // Hitos continuos - mostrar como círculos separados
                     let hitosHtml = '<div style="display: flex; align-items: center; gap: 2px;">';
                     for (let i = 0; i < act.duracion; i++) {
                         const diaHito = startDay + i;
-                        hitosHtml += `<div class="hito" style="margin-left: ${i === 0 ? (startDay - 1) * pixelsPerDay : 0}px; background-color: ${color}; width: 6px; height: 6px; border-radius: 50%; display: inline-block; border: 1px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.3);" title="${act.nombreActividad} - Día ${diaHito}">
-                            <div class="tooltip-content">${act.nombreActividad}<br/>Día: ${diaHito}</div>
-                        </div>`;
+                        hitosHtml += `<div class="hito" style="margin-left: ${i === 0 ? (startDay - 1) * pixelsPerDay : 0}px; background-color: ${color}; width: 6px; height: 6px; border-radius: 50%; display: inline-block; border: 1px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.3);" title="${act.nombreActividad} - Día ${diaHito}"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${diaHito}</div></div>`;
                     }
                     hitosHtml += '</div>';
                     barContent = `${hitosHtml}${categoriaBadge}`;
                 } else {
-                    barContent = `<div style="display: flex; align-items: center;">
-                        <div class="barra" style="margin-left: ${(startDay - 1) * pixelsPerDay}px; width: ${(act.duracion || 0) * pixelsPerDay}px; background-color: ${color}; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; font-weight: bold; position: relative; cursor: pointer;">
-                            <div class="tooltip-content">${act.nombreActividad}<br/>Inicio: Día ${startDay}<br/>Fin: Día ${endDay}<br/>Duración: ${act.duracion} días${act.observaciones ? '<br/>' + act.observaciones : ''}</div>
-                            ${act.duracion}
-                        </div>
-                        ${categoriaBadge}
-                    </div>`;
+                    barContent = `<div style="display: flex; align-items: center;"><div class="barra" style="margin-left: ${(startDay - 1) * pixelsPerDay}px; width: ${(act.duracion || 0) * pixelsPerDay}px; background-color: ${color}; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; font-weight: bold; position: relative; cursor: pointer;"><div class="tooltip-content">${act.nombreActividad}<br/>Inicio: Día ${startDay}<br/>Fin: Día ${endDay}<br/>Duración: ${act.duracion} días${act.observaciones ? '<br/>' + act.observaciones : ''}</div>${act.duracion}</div>${categoriaBadge}</div>`;
                 }
-
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;">
-                    <div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">
-                        ${barContent}
-                    </div>
-                </div>`;
+                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">${barContent}</div></div>`;
             });
-
             html += '</div>';
             return html;
         }
@@ -1293,230 +1113,85 @@
             const escalaLabels = document.querySelector('.escala-labels');
             const escala1 = document.querySelector('.escala[data-escenario-id="escenario1"]');
             const escala2 = document.querySelector('.escala[data-escenario-id="escenario2"]');
-
             if (escala1 && escala2) {
                 let isScrolling = false;
-
-                // Sincronizar scroll vertical Y HORIZONTAL entre los dos timelines
                 escala1.addEventListener('scroll', function() {
                     if (isScrolling) return;
                     isScrolling = true;
-
-                    if (escalaLabels) {
-                        escalaLabels.scrollTop = escala1.scrollTop;
-                    }
+                    if (escalaLabels) {escalaLabels.scrollTop = escala1.scrollTop;}
                     escala2.scrollTop = escala1.scrollTop;
                     escala2.scrollLeft = escala1.scrollLeft;
-
                     setTimeout(() => { isScrolling = false; }, 10);
                 });
-
                 escala2.addEventListener('scroll', function() {
                     if (isScrolling) return;
                     isScrolling = true;
-
-                    if (escalaLabels) {
-                        escalaLabels.scrollTop = escala2.scrollTop;
-                    }
+                    if (escalaLabels) {escalaLabels.scrollTop = escala2.scrollTop;}
                     escala1.scrollTop = escala2.scrollTop;
                     escala1.scrollLeft = escala2.scrollLeft;
-
                     setTimeout(() => { isScrolling = false; }, 10);
                 });
-
-                // Sincronizar scroll vertical de la columna izquierda
                 if (escalaLabels) {
                     escalaLabels.addEventListener('scroll', function() {
                         if (isScrolling) return;
                         isScrolling = true;
-
                         escala1.scrollTop = escalaLabels.scrollTop;
                         escala2.scrollTop = escalaLabels.scrollTop;
-
                         setTimeout(() => { isScrolling = false; }, 10);
                     });
                 }
             }
         }
 
-        function setupResizableDivider() {
-            const divider = document.getElementById('dividerBar');
-            const container = document.getElementById('comparativoTimelineContainer');
-            const panel1 = document.getElementById('escenario1Panel');
-            const panel2 = document.getElementById('escenario2Panel');
-
-            if (!divider || !container || !panel1 || !panel2) return;
-
-            let isResizing = false;
-            let startX = 0;
-            let startWidth1 = 0;
-            let containerWidth = 0;
-
-            divider.addEventListener('mousedown', function(e) {
-                isResizing = true;
-                startX = e.clientX;
-                startWidth1 = panel1.offsetWidth;
-                containerWidth = container.offsetWidth;
-                divider.style.background = 'linear-gradient(to right, #555, #222, #555)';
-                document.body.style.cursor = 'col-resize';
-                document.body.style.userSelect = 'none';
-            });
-
-            document.addEventListener('mousemove', function(e) {
-                if (!isResizing) return;
-
-                const deltaX = e.clientX - startX;
-                const newWidth1 = startWidth1 + deltaX;
-                const minWidth = 400;
-
-                // Asegurar que ambos paneles tengan un ancho mínimo
-                if (newWidth1 >= minWidth && (containerWidth - newWidth1 - 6) >= minWidth) {
-                    const percent1 = (newWidth1 / containerWidth) * 100;
-                    const percent2 = 100 - percent1 - (6 / containerWidth * 100);
-
-                    panel1.style.flex = `0 0 ${percent1}%`;
-                    panel2.style.flex = `0 0 ${percent2}%`;
-                }
-            });
-
-            document.addEventListener('mouseup', function() {
-                if (isResizing) {
-                    isResizing = false;
-                    divider.style.background = 'linear-gradient(to right, #ddd, #999, #ddd)';
-                    document.body.style.cursor = 'auto';
-                    document.body.style.userSelect = 'auto';
-                }
-            });
-        }
-
         function renderBothViews(container, activities) {
-            // Ordenar actividades por ID
-            activities = [...activities].sort((a, b) => {
-                const aNum = parseInt(a.id.replace(/\D/g, '')) || 0;
-                const bNum = parseInt(b.id.replace(/\D/g, '')) || 0;
-                if (aNum !== bNum) return aNum - bNum;
-                return a.id.localeCompare(b.id);
-            });
-
-            // Calcular startDays basado en relaciones
+            activities = [...activities].sort((a, b) => {const aNum = parseInt(a.id.replace(/\D/g, '')) || 0; const bNum = parseInt(b.id.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.id.localeCompare(b.id);});
             calculateStartDays(activities);
-
-            // Guardar los datos recalculados a localStorage
             activitiesByTab[currentTab] = activities;
             saveToLocalStorage();
-
-            let html = '';
-
-            // Leyenda de colores
-            html += '<div class="legend">';
+            let html = '<div class="legend">';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {
-                    'DIRECTOR': 'Director de Obra y Residentes',
-                    'CONTROL_COSTOS': 'Control de Costos',
-                    'ADMINISTRATIVO': 'Administrativo',
-                    'COMITE': 'Comité',
-                    'CONTRATISTA': 'Contratista',
-                    'TECNICO': 'Técnico/Presupuesto',
-                    'COSTOS_CONSTRUCCION': 'Costos/Construcción',
-                    'CONTROL_INTERNO': 'Control Interno'
-                };
-                html += `<div class="legend-item">
-                    <div class="legend-color" style="background-color: ${color};"></div>
-                    <span style="font-size: 12px;">${labels[key]}</span>
-                </div>`;
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
+                html += `<div class="legend-item"><div class="legend-color" style="background-color: ${color};"></div><span style="font-size: 12px;">${labels[key]}</span></div>`;
             });
             html += '</div>';
-
-            // Calcular días máximos
             let maxDays = 0;
-            activities.forEach(act => {
-                maxDays = Math.max(maxDays, (act.startDay || 1) + (act.duracion || 0));
-            });
+            activities.forEach(act => {maxDays = Math.max(maxDays, (act.startDay || 1) + (act.duracion || 0));});
             maxDays = Math.max(maxDays, 50);
-
-            // Guardar maxDays para sincronización posterior
             window.currentMaxDays = maxDays;
-            const pixelsPerNumber = 40;
-            const pixelsPer2Days = pixelsPerNumber;
-            const totalTimelineWidth = maxDays * 10 + 40;
-
-            html += '<div class="escala-container">';
-
-            // Sección izquierda - Actividades
-            html += '<div class="escala-labels">';
-            html += '<div class="header" style="width: 530px;"><div class="header-id">ID</div><div class="header-capitulo">Capítulo</div><div class="header-actividad">Actividad</div></div>';
-
-            activities.forEach((act, idx) => {
-                html += `<div class="row" onclick="showDeleteConfirm(${idx})">
-                    <div class="id-name">${act.id}</div>
-                    <div class="capitulo-name">${act.capitulo}</div>
-                    <div class="actividad-name" style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'};">${act.nombreActividad}</div>
-                </div>`;
-            });
-
-            html += '</div>';
-
-            // Sección derecha - Gantt
             const contentWidth = maxDays * 10 + 40;
-            html += '<div class="escala" id="escalaMain" data-max-days="' + maxDays + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
+            html += '<div class="escala-container"><div class="escala-labels"><div class="header" style="width: 530px;"><div class="header-id">ID</div><div class="header-capitulo">Capítulo</div><div class="header-actividad">Actividad</div></div>';
+            activities.forEach((act, idx) => {
+                html += `<div class="row" onclick="showDeleteConfirm(${idx})"><div class="id-name">${act.id}</div><div class="capitulo-name">${act.capitulo}</div><div class="actividad-name" style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'};">${act.nombreActividad}</div></div>`;
+            });
+            html += '</div><div class="escala" id="escalaMain" data-max-days="' + maxDays + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
             html += `<div class="escala-label-dias" style="width: ${maxDays * 10}px; min-width: ${maxDays * 10}px; flex-shrink: 0;">${Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: 10px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('')}</div>`;
-
-            // Grid lines
             html += '<div class="grid-lines" style="position: absolute; top: 0; left: 0; width: ' + contentWidth + 'px; height: 100%; pointer-events: none; display: flex; z-index: 0;">';
             for (let i = 0; i < Math.ceil(maxDays/2); i++) {
                 html += '<div class="grid-line" style="width: 20px; height: 100%; border-right: 1px dotted rgba(150, 150, 150, 0.25); box-sizing: border-box;"></div>';
             }
             html += '</div>';
-
             activities.forEach((act, idx) => {
                 const startDay = act.startDay || 1;
                 const endDay = act.duracion > 0 ? startDay + act.duracion - 1 : startDay;
                 const color = getColorForArea(act.area);
                 let barContent = '';
-
-                let tooltipText = `${act.nombreActividad}\nInicio: Día ${startDay}\nFin: Día ${endDay}\nDuración: ${act.duracion} días`;
-                if (act.observaciones) {
-                    tooltipText += `\n${act.observaciones}`;
-                }
                 const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
-
                 if (act.duracion === 0) {
-                    // Hito (milestone) - mostrar como círculo único
-                    barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * 10 - 6}px; background-color: ${color};">
-                        <div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div>
-                    </div>${categoriaBadge}`;
+                    barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * 10 - 6}px; background-color: ${color};"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div></div>${categoriaBadge}`;
                 } else if (act.hitoContinuo) {
-                    // Hitos continuos - mostrar como círculos separados
                     let hitosHtml = '<div style="display: flex; align-items: center; gap: 4px;">';
                     for (let i = 0; i < act.duracion; i++) {
                         const diaHito = startDay + i;
-                        hitosHtml += `<div class="hito" style="margin-left: ${i === 0 ? (startDay - 1) * 10 : 0}px; background-color: ${color}; width: 8px; height: 8px; border-radius: 50%; display: inline-block; border: 1px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.3);" title="${act.nombreActividad} - Día ${diaHito}">
-                            <div class="tooltip-content">${act.nombreActividad}<br/>Día: ${diaHito}</div>
-                        </div>`;
+                        hitosHtml += `<div class="hito" style="margin-left: ${i === 0 ? (startDay - 1) * 10 : 0}px; background-color: ${color}; width: 8px; height: 8px; border-radius: 50%; display: inline-block; border: 1px solid white; box-shadow: 0 0 2px rgba(0,0,0,0.3);" title="${act.nombreActividad} - Día ${diaHito}"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${diaHito}</div></div>`;
                     }
                     hitosHtml += '</div>';
                     barContent = `${hitosHtml}${categoriaBadge}`;
                 } else {
-                    // Barra normal
-                    barContent = `<div style="display: flex; align-items: center;">
-                        <div class="barra"
-                             style="margin-left: ${(startDay - 1) * 10}px; width: ${(act.duracion || 0) * 10}px; background-color: ${color};">
-                            <div class="tooltip-content">${act.nombreActividad}<br/>Inicio: Día ${startDay}<br/>Fin: Día ${endDay}<br/>Duración: ${act.duracion} días${act.observaciones ? '<br/>' + act.observaciones : ''}</div>
-                            ${act.duracion}
-                        </div>
-                        ${categoriaBadge}
-                    </div>`;
+                    barContent = `<div style="display: flex; align-items: center;"><div class="barra" style="margin-left: ${(startDay - 1) * 10}px; width: ${(act.duracion || 0) * 10}px; background-color: ${color};"><div class="tooltip-content">${act.nombreActividad}<br/>Inicio: Día ${startDay}<br/>Fin: Día ${endDay}<br/>Duración: ${act.duracion} días${act.observaciones ? '<br/>' + act.observaciones : ''}</div>${act.duracion}</div>${categoriaBadge}</div>`;
                 }
-
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;" onclick="showDeleteConfirm(${idx})">
-                    <div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">
-                        ${barContent}
-                    </div>
-                </div>`;
+                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;" onclick="showDeleteConfirm(${idx})"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">${barContent}</div></div>`;
             });
-
             html += '</div></div>';
-
             container.innerHTML = html;
         }
 
@@ -1531,9 +1206,7 @@
             populateRelatedActivities();
             document.getElementById('modal').classList.add('active');
             document.getElementById('pestaña').value = currentTab;
-            // Asignar un área por defecto
             document.getElementById('area').value = 'DIRECTOR';
-            // Inicializar holgura en 0
             document.getElementById('holgura').value = 0;
         }
 
@@ -1541,15 +1214,8 @@
             const select = document.getElementById('actividadRelacionada');
             const tabToUse = currentTab === 'comparativo' ? 'optimista' : currentTab;
             const currentActivities = activitiesByTab[tabToUse] || [];
-
-            // Limpiar opciones excepto la primera
-            while (select.options.length > 1) {
-                select.remove(1);
-            }
-
-            // Agregar las actividades existentes (excluyendo hitos)
+            while (select.options.length > 1) {select.remove(1);}
             currentActivities.forEach((act, idx) => {
-                // No permitir hitos como actividades relacionadas
                 if (act.duracion > 0) {
                     const option = document.createElement('option');
                     option.value = act.id;
@@ -1565,43 +1231,8 @@
         }
 
         function editActivity(index) {
-            const activities = activitiesByTab[currentTab];
-            const activity = activities[index];
-
-            editingActivityId = index;
-
-            populateRelatedActivities();
-
-            document.getElementById('pestaña').value = currentTab;
-            document.getElementById('capitulo').value = activity.capitulo;
-            document.getElementById('nombreActividad').value = activity.nombreActividad;
-            document.getElementById('duracion').value = activity.duracion;
-            document.getElementById('area').value = activity.area;
-            document.getElementById('id').value = activity.id;
-            document.getElementById('actividadRelacionada').value = activity.actividadRelacionada || '';
-            document.getElementById('tipoRelacion').value = activity.tipoRelacion;
-            document.querySelector(`input[name="categoria"][value="${activity.categoria || ''}"]`).checked = true;
-            document.getElementById('observaciones').value = activity.observaciones || '';
-            document.getElementById('enfasis').checked = activity.enfasis;
-
-            document.querySelector('.modal-header').textContent = 'Editar Actividad';
-            document.getElementById('btnDelete').style.display = 'block';
-            document.getElementById('modal').classList.add('active');
-        }
-
-        function deleteActivity() {
-            if (editingActivityId !== null && confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
-                activitiesByTab[currentTab].splice(editingActivityId, 1);
-                closeModal();
-                renderScenarios();
-            }
-        }
-
-        function editActivity(index) {
             const activity = activitiesByTab[currentTab][index];
             editingActivityId = index;
-
-            // Llenar el formulario con los datos de la actividad
             document.getElementById('pestaña').value = activity.pestaña;
             document.getElementById('capitulo').value = activity.capitulo || '';
             document.getElementById('nombreActividad').value = activity.nombreActividad;
@@ -1613,39 +1244,34 @@
             document.getElementById('holgura').value = activity.holgura || 0;
             document.getElementById('observaciones').value = activity.observaciones || '';
             document.getElementById('enfasis').checked = activity.enfasis || false;
-
-            // Seleccionar la categoría
-            document.querySelectorAll('input[name="categoria"]').forEach(radio => {
-                radio.checked = (radio.value === activity.categoria);
-            });
-
-            // Cargar estado de hito continuo
+            document.querySelectorAll('input[name="categoria"]').forEach(radio => {radio.checked = (radio.value === activity.categoria);});
             document.getElementById('hitoContinuo').checked = activity.hitoContinuo || false;
-
-            // Mostrar modal y botón de eliminar
             document.getElementById('modal').classList.add('active');
             document.getElementById('btnDelete').style.display = 'inline-block';
             populateRelatedActivities();
         }
 
-        function showDeleteConfirm(index) {
-            if (currentTab === 'comparativo') {
-                return;
+        function deleteActivity() {
+            if (editingActivityId !== null && confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
+                activitiesByTab[currentTab].splice(editingActivityId, 1);
+                closeModal();
+                renderScenarios();
             }
+        }
+
+        function showDeleteConfirm(index) {
+            if (currentTab === 'comparativo') {return;}
             editActivity(index);
         }
 
         document.getElementById('activityForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const nuevoID = document.getElementById('id').value;
             const existente = activitiesByTab[currentTab]?.some((act, idx) => act.id === nuevoID && idx !== editingActivityId);
-
             if (existente) {
                 alert('⚠️ Error: Ya existe una actividad con el ID "' + nuevoID + '"');
                 return;
             }
-
             const activity = {
                 pestaña: document.getElementById('pestaña').value,
                 capitulo: document.getElementById('capitulo').value,
@@ -1662,32 +1288,19 @@
                 hitoContinuo: document.getElementById('hitoContinuo').checked,
                 startDay: 1
             };
-
             const tabId = activity.pestaña;
-
             if (editingActivityId !== null) {
-                // Editar
                 activitiesByTab[currentTab][editingActivityId] = activity;
             } else {
-                // Agregar nueva
-                if (!activitiesByTab[tabId]) {
-                    activitiesByTab[tabId] = [];
-                }
+                if (!activitiesByTab[tabId]) {activitiesByTab[tabId] = [];}
                 activitiesByTab[tabId].push(activity);
             }
-
             saveToLocalStorage();
-
-            // Si cambió de pestaña, actualizar la vista
-            if (activity.pestaña !== currentTab) {
-                switchTab(activity.pestaña);
-            }
-
+            if (activity.pestaña !== currentTab) {switchTab(activity.pestaña);}
             closeModal();
             renderScenarios();
         });
 
-        // Actualizar fecha
         function updateDate() {
             const today = new Date();
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -1698,20 +1311,14 @@
             const escalaLabels = document.querySelector('.escala-labels');
             const escala = document.querySelector('#escalaMain');
             const escalaHeader = document.querySelector('.escala-label-dias');
-
             if (escala && escalaLabels) {
                 escala.addEventListener('scroll', function() {
-                    // Sincronizar scroll vertical
                     escalaLabels.scrollTop = escala.scrollTop;
-                    // Sincronizar scroll horizontal del header
-                    if (escalaHeader) {
-                        escalaHeader.parentElement.scrollLeft = escala.scrollLeft;
-                    }
+                    if (escalaHeader) {escalaHeader.parentElement.scrollLeft = escala.scrollLeft;}
                 });
             }
         }
 
-        // Recalcular ancho cuando se redimensiona la ventana
         window.addEventListener('resize', function() {
             const escala = document.querySelector('.escala');
             const escalaHeader = document.querySelector('.escala-label-dias');
@@ -1719,26 +1326,21 @@
                 const pixelsPerDay = 10;
                 const minWidth = window.currentMaxDays * pixelsPerDay + 40;
                 escala.style.minWidth = minWidth + 'px';
-                if (escalaHeader) {
-                    escalaHeader.style.width = (window.currentMaxDays * 10) + 'px';
-                }
+                if (escalaHeader) {escalaHeader.style.width = (window.currentMaxDays * 10) + 'px';}
             }
         });
 
         let currentTooltip = null;
 
         function setupTooltips() {
-            // Configurar tooltips para barras
             document.querySelectorAll('.barra').forEach(barra => {
                 const tooltipOld = barra.querySelector('.tooltip-content');
                 if (!tooltipOld) return;
-
                 const tooltipText = tooltipOld.innerHTML;
                 const tooltip = document.createElement('div');
                 tooltip.className = 'tooltip-content';
                 tooltip.innerHTML = tooltipText;
                 document.body.appendChild(tooltip);
-
                 barra.addEventListener('mouseenter', function(e) {
                     const rect = barra.getBoundingClientRect();
                     tooltip.style.top = (rect.top - 10) + 'px';
@@ -1746,26 +1348,19 @@
                     tooltip.classList.add('visible');
                     currentTooltip = tooltip;
                 });
-
                 barra.addEventListener('mouseleave', function() {
                     tooltip.classList.remove('visible');
                 });
-
-                // Remover el tooltip viejo
                 tooltipOld.remove();
             });
-
-            // Configurar tooltips para hitos (círculos)
             document.querySelectorAll('.hito').forEach(hito => {
                 const tooltipOld = hito.querySelector('.tooltip-content');
                 if (!tooltipOld) return;
-
                 const tooltipText = tooltipOld.innerHTML;
                 const tooltip = document.createElement('div');
                 tooltip.className = 'tooltip-content';
                 tooltip.innerHTML = tooltipText;
                 document.body.appendChild(tooltip);
-
                 hito.addEventListener('mouseenter', function(e) {
                     const rect = hito.getBoundingClientRect();
                     tooltip.style.top = (rect.top - 10) + 'px';
@@ -1773,42 +1368,33 @@
                     tooltip.classList.add('visible');
                     currentTooltip = tooltip;
                 });
-
                 hito.addEventListener('mouseleave', function() {
                     tooltip.classList.remove('visible');
                 });
-
-                // Remover el tooltip viejo
                 tooltipOld.remove();
             });
         }
 
-        // Cerrar modal al hacer clic fuera
         document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+            if (e.target === this) {closeModal();}
         });
 
-        // Función para resetear datos
         function resetData() {
             try {
                 localStorage.clear();
             } catch (e) {
                 console.log('localStorage no disponible para limpiar');
             }
-            activitiesByTab = {
-                'optimista': [],
-                'srm-automatizacion': [],
-                'srm-validado': []
-            };
+            activitiesByTab['optimista'] = [];
+            activitiesByTab['srm-automatizacion'] = [];
+            activitiesByTab['srm-validado'] = [];
             initializeDefaultData();
             saveToLocalStorage();
             renderScenarios();
             alert('Datos reiniciados correctamente');
         }
 
-        // Inicializar
+        initializeDefaultData();
         loadFromLocalStorage();
         updateDate();
         initTabs();
