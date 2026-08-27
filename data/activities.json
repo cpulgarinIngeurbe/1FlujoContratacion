@@ -1208,6 +1208,22 @@
     },
     {
       "pestaña": "flujo-srm",
+      "capitulo": "dsfds",
+      "nombreActividad": "gdsgdfg",
+      "duracion": 15,
+      "area": "COMITE",
+      "id": "3",
+      "actividadRelacionada": "1",
+      "tipoRelacion": "fin-fin",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
+    },
+    {
+      "pestaña": "flujo-srm",
       "capitulo": "fsd",
       "nombreActividad": "fdsfs",
       "duracion": 1,
