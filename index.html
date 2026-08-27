@@ -727,6 +727,9 @@
                         <option value="TECNICO">Técnico/Presupuesto</option>
                         <option value="COSTOS_CONSTRUCCION">Costos/Construcción</option>
                         <option value="CONTROL_INTERNO">Control Interno</option>
+                        <option value="DIRECTOR_OBRA">Director de Obra</option>
+                        <option value="SUBGERENTE_CONSTRUCCION">Subgerente de Construcción</option>
+                        <option value="GERENTE_CONSTRUCCION">Gerente de Construcción</option>
                     </select>
                 </div>
 
@@ -841,7 +844,7 @@
             }
         }
 
-        const colorMap = {'DIRECTOR': '#3498db', 'RESIDENTE_TECNICO': '#16a085', 'OFICIAL_CUMPLIMIENTO': '#8e44ad', 'CONTABILIDAD': '#c0392b', 'RESIDENTE_ADMIN_COMPRAS': '#d35400', 'CONTROL_COSTOS': '#e74c3c', 'ADMINISTRATIVO': '#2ecc71', 'COMITE': '#f39c12', 'CONTRATISTA': '#9b59b6', 'TECNICO': '#1abc9c', 'COSTOS_CONSTRUCCION': '#d4a574', 'CONTROL_INTERNO': '#34495e'};
+        const colorMap = {'DIRECTOR': '#3498db', 'RESIDENTE_TECNICO': '#16a085', 'OFICIAL_CUMPLIMIENTO': '#8e44ad', 'CONTABILIDAD': '#c0392b', 'RESIDENTE_ADMIN_COMPRAS': '#d35400', 'CONTROL_COSTOS': '#e74c3c', 'ADMINISTRATIVO': '#2ecc71', 'COMITE': '#f39c12', 'CONTRATISTA': '#9b59b6', 'TECNICO': '#1abc9c', 'COSTOS_CONSTRUCCION': '#d4a574', 'CONTROL_INTERNO': '#34495e', 'DIRECTOR_OBRA': '#2980b9', 'SUBGERENTE_CONSTRUCCION': '#27ae60', 'GERENTE_CONSTRUCCION': '#e67e22'};
 
         function getColorForArea(area) {
             return colorMap[area] || '#34495e';
@@ -992,7 +995,7 @@
             const legendDiv = document.createElement('div');
             legendDiv.className = 'legend';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno', 'DIRECTOR_OBRA': 'Director de Obra', 'SUBGERENTE_CONSTRUCCION': 'Subgerente de Construcción', 'GERENTE_CONSTRUCCION': 'Gerente de Construcción'};
                 const legendItem = document.createElement('div');
                 legendItem.className = 'legend-item';
                 const colorDiv = document.createElement('div');
@@ -1155,7 +1158,7 @@
             saveToLocalStorage();
             let html = '<div class="legend">';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno', 'DIRECTOR_OBRA': 'Director de Obra', 'SUBGERENTE_CONSTRUCCION': 'Subgerente de Construcción', 'GERENTE_CONSTRUCCION': 'Gerente de Construcción'};
                 html += `<div class="legend-item"><div class="legend-color" style="background-color: ${color};"></div><span style="font-size: 12px;">${labels[key]}</span></div>`;
             });
             html += '</div>';
