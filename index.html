@@ -692,6 +692,7 @@
                         <option value="optimista">Proceso Actual (91 días)</option>
                         <option value="srm-automatizacion">Proceso Optimizado SRM+Automatización (41 días)</option>
                         <option value="srm-validado">Proceso Validado SRM+Automatización (46 días)</option>
+                        <option value="flujo-srm">Flujo SRM</option>
                     </select>
                 </div>
 
@@ -715,6 +716,10 @@
                     <select id="area" required>
                         <option value="">Seleccionar área</option>
                         <option value="DIRECTOR">Director de Obra y Residentes</option>
+                        <option value="RESIDENTE_TECNICO">Residente técnico</option>
+                        <option value="OFICIAL_CUMPLIMIENTO">Oficial de cumplimiento</option>
+                        <option value="CONTABILIDAD">Contabilidad</option>
+                        <option value="RESIDENTE_ADMIN_COMPRAS">Residente Administrativo-Compras</option>
                         <option value="CONTROL_COSTOS">Control de Costos</option>
                         <option value="ADMINISTRATIVO">Administrativo</option>
                         <option value="COMITE">Comité</option>
@@ -797,8 +802,8 @@
     </div>
 
     <script>
-        const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': []};
-        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'comparativo': 'Comparativo Escenarios'};
+        const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': [], 'flujo-srm': []};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-srm': 'Flujo SRM', 'comparativo': 'Comparativo Escenarios'};
         let currentTab = 'optimista';
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
@@ -836,7 +841,7 @@
             }
         }
 
-        const colorMap = {'DIRECTOR': '#3498db', 'CONTROL_COSTOS': '#e74c3c', 'ADMINISTRATIVO': '#2ecc71', 'COMITE': '#f39c12', 'CONTRATISTA': '#9b59b6', 'TECNICO': '#1abc9c', 'COSTOS_CONSTRUCCION': '#d4a574', 'CONTROL_INTERNO': '#34495e'};
+        const colorMap = {'DIRECTOR': '#3498db', 'RESIDENTE_TECNICO': '#16a085', 'OFICIAL_CUMPLIMIENTO': '#8e44ad', 'CONTABILIDAD': '#c0392b', 'RESIDENTE_ADMIN_COMPRAS': '#d35400', 'CONTROL_COSTOS': '#e74c3c', 'ADMINISTRATIVO': '#2ecc71', 'COMITE': '#f39c12', 'CONTRATISTA': '#9b59b6', 'TECNICO': '#1abc9c', 'COSTOS_CONSTRUCCION': '#d4a574', 'CONTROL_INTERNO': '#34495e'};
 
         function getColorForArea(area) {
             return colorMap[area] || '#34495e';
@@ -987,7 +992,7 @@
             const legendDiv = document.createElement('div');
             legendDiv.className = 'legend';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
                 const legendItem = document.createElement('div');
                 legendItem.className = 'legend-item';
                 const colorDiv = document.createElement('div');
@@ -1150,7 +1155,7 @@
             saveToLocalStorage();
             let html = '<div class="legend">';
             Object.entries(colorMap).forEach(([key, color]) => {
-                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
+                const labels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno'};
                 html += `<div class="legend-item"><div class="legend-color" style="background-color: ${color};"></div><span style="font-size: 12px;">${labels[key]}</span></div>`;
             });
             html += '</div>';
@@ -1388,6 +1393,7 @@
             activitiesByTab['optimista'] = [];
             activitiesByTab['srm-automatizacion'] = [];
             activitiesByTab['srm-validado'] = [];
+            activitiesByTab['flujo-srm'] = [];
             initializeDefaultData();
             saveToLocalStorage();
             renderScenarios();
