@@ -1189,54 +1189,5 @@
       "startDay": 46
     }
   ],
-  "flujo-srm": [
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "1",
-      "nombreActividad": "1",
-      "duracion": 10,
-      "area": "CONTROL_INTERNO",
-      "id": "1",
-      "actividadRelacionada": "",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 1
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "dsfds",
-      "nombreActividad": "gdsgdfg",
-      "duracion": 15,
-      "area": "COMITE",
-      "id": "3",
-      "actividadRelacionada": "1",
-      "tipoRelacion": "fin-fin",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 1
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "fsd",
-      "nombreActividad": "fdsfs",
-      "duracion": 1,
-      "area": "COMITE",
-      "id": "4",
-      "actividadRelacionada": "1",
-      "tipoRelacion": "inicio-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 1
-    }
-  ]
+  "flujo-srm": []
 }
