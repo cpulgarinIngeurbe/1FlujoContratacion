@@ -709,6 +709,8 @@
 
     <div class="footer-button-area">
         <button class="btn-add-activity" onclick="resetData()" style="background: #95a5a6; margin-right: auto;">⟳ REINICIAR DATOS</button>
+        <button class="btn-add-activity" onclick="configurarToken()" style="background: #6e7781; font-size: 11px;">🔑 TOKEN</button>
+        <button class="btn-add-activity" id="btnGuardarGithub" onclick="saveToGithub()" style="background: #24292f;">💾 GUARDAR EN GITHUB</button>
         <button class="btn-add-activity" onclick="exportData()" style="background: #16a085;">⬇ EXPORTAR DATOS</button>
         <button class="btn-add-activity" onclick="document.getElementById('importFileInput').click()" style="background: #2980b9;">⬆ IMPORTAR DATOS</button>
         <input type="file" id="importFileInput" accept="application/json" style="display: none;" onchange="importData(event)">
@@ -887,6 +889,98 @@
             };
             reader.readAsText(file);
             event.target.value = '';
+        }
+
+        const GITHUB_OWNER = 'cpulgarinIngeurbe';
+        const GITHUB_REPO = '1FlujoContratacion';
+        const GITHUB_PATH = 'data/activities.json';
+        const GITHUB_BRANCH = 'main';
+
+        async function loadRemoteData() {
+            try {
+                const resp = await fetch(GITHUB_PATH, {cache: 'no-store'});
+                if (resp.ok) {
+                    const remote = await resp.json();
+                    Object.assign(activitiesByTab, remote);
+                }
+            } catch (e) {
+                console.log('No se pudo cargar data/activities.json, usando datos por defecto/locales');
+            }
+        }
+
+        function getGithubToken() {
+            let token = localStorage.getItem('githubToken');
+            if (!token) {
+                token = prompt('Pega tu token personal de GitHub (con permiso de escritura solo sobre este repositorio). Se guarda únicamente en este navegador:');
+                if (token) localStorage.setItem('githubToken', token.trim());
+            }
+            return token ? token.trim() : null;
+        }
+
+        function configurarToken() {
+            const token = prompt('Pega tu token personal de GitHub para este repositorio.\nDéjalo vacío y acepta para borrar el token guardado en este navegador:');
+            if (token === null) return;
+            if (token.trim() === '') {
+                localStorage.removeItem('githubToken');
+                alert('Token eliminado de este navegador.');
+            } else {
+                localStorage.setItem('githubToken', token.trim());
+                alert('Token guardado en este navegador.');
+            }
+        }
+
+        function utf8ToBase64(str) {
+            const bytes = new TextEncoder().encode(str);
+            let binary = '';
+            bytes.forEach(b => binary += String.fromCharCode(b));
+            return btoa(binary);
+        }
+
+        async function saveToGithub() {
+            const token = getGithubToken();
+            if (!token) { alert('Se necesita un token de GitHub para guardar.'); return; }
+            const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_PATH}`;
+            const btn = document.getElementById('btnGuardarGithub');
+            if (btn) { btn.disabled = true; btn.textContent = '⏳ GUARDANDO...'; }
+            try {
+                const getResp = await fetch(apiUrl + `?ref=${GITHUB_BRANCH}`, {
+                    headers: {Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json'}
+                });
+                let sha;
+                if (getResp.ok) {
+                    sha = (await getResp.json()).sha;
+                } else if (getResp.status !== 404) {
+                    const errData = await getResp.json().catch(() => ({}));
+                    throw new Error(errData.message || `Error ${getResp.status} al leer el archivo actual`);
+                }
+                const content = utf8ToBase64(JSON.stringify(activitiesByTab, null, 2));
+                const putResp = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        message: `Actualiza datos de actividades (${new Date().toLocaleString('es-CO')})`,
+                        content,
+                        sha,
+                        branch: GITHUB_BRANCH
+                    })
+                });
+                if (!putResp.ok) {
+                    const errData = await putResp.json().catch(() => ({}));
+                    throw new Error(errData.message || `Error ${putResp.status} al guardar`);
+                }
+                saveToLocalStorage();
+                alert('Datos guardados correctamente en el repositorio de GitHub.');
+            } catch (err) {
+                console.error('Error guardando en GitHub:', err);
+                if (err.message && /bad credentials|401/i.test(err.message)) {
+                    localStorage.removeItem('githubToken');
+                    alert('El token de GitHub no es válido o expiró. Se eliminó de este navegador; vuelve a intentar para ingresarlo de nuevo.');
+                } else {
+                    alert('No se pudo guardar en GitHub: ' + err.message);
+                }
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = '💾 GUARDAR EN GITHUB'; }
+            }
         }
 
         function initializeDefaultData() {
@@ -1478,11 +1572,15 @@
             alert('Datos reiniciados correctamente');
         }
 
-        initializeDefaultData();
-        loadFromLocalStorage();
-        updateDate();
-        initTabs();
-        renderScenarios();
+        async function initApp() {
+            initializeDefaultData();
+            await loadRemoteData();
+            loadFromLocalStorage();
+            updateDate();
+            initTabs();
+            renderScenarios();
+        }
+        initApp();
     </script>
 </body>
 </html>
