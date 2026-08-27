@@ -1189,5 +1189,22 @@
       "startDay": 46
     }
   ],
-  "flujo-srm": []
+  "flujo-srm": [
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "1",
+      "nombreActividad": "1",
+      "duracion": 10,
+      "area": "CONTROL_INTERNO",
+      "id": "1",
+      "actividadRelacionada": "",
+      "tipoRelacion": "fin-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
+    }
+  ]
 }
