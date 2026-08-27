@@ -1871,14 +1871,14 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "10",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "9",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 16
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1887,14 +1887,14 @@
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "11",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "10",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
