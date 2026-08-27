@@ -951,7 +951,9 @@
                     sha = (await getResp.json()).sha;
                 } else if (getResp.status !== 404) {
                     const errData = await getResp.json().catch(() => ({}));
-                    throw new Error(errData.message || `Error ${getResp.status} al leer el archivo actual`);
+                    const e = new Error(errData.message || `Error ${getResp.status} al leer el archivo actual`);
+                    e.status = getResp.status;
+                    throw e;
                 }
                 const content = utf8ToBase64(JSON.stringify(activitiesByTab, null, 2));
                 const putResp = await fetch(apiUrl, {
@@ -966,17 +968,23 @@
                 });
                 if (!putResp.ok) {
                     const errData = await putResp.json().catch(() => ({}));
-                    throw new Error(errData.message || `Error ${putResp.status} al guardar`);
+                    const e = new Error(errData.message || `Error ${putResp.status} al guardar`);
+                    e.status = putResp.status;
+                    throw e;
                 }
                 saveToLocalStorage();
                 alert('Datos guardados correctamente en el repositorio de GitHub.');
             } catch (err) {
                 console.error('Error guardando en GitHub:', err);
-                if (err.message && /bad credentials|401/i.test(err.message)) {
+                if (err.status === 401) {
                     localStorage.removeItem('githubToken');
-                    alert('El token de GitHub no es válido o expiró. Se eliminó de este navegador; vuelve a intentar para ingresarlo de nuevo.');
+                    alert('GitHub rechazó el token (401 - no autorizado). Se eliminó de este navegador.\n\nDetalle de GitHub: ' + err.message + '\n\nGenera un token nuevo y vuelve a pegarlo con el botón 🔑 TOKEN.');
+                } else if (err.status === 403) {
+                    alert('GitHub rechazó la operación por permisos insuficientes (403). El token no se borró.\n\nDetalle: ' + err.message + '\n\nRevisa que el token tenga el scope "repo" (classic) o el permiso "Contents: Read and write" sobre este repositorio (fine-grained).');
+                } else if (err.status === 404) {
+                    alert('GitHub respondió 404 (no encontrado). El token no se borró.\n\nEsto suele pasar si el token fine-grained no incluye este repositorio, o si no tiene acceso.\n\nDetalle: ' + err.message);
                 } else {
-                    alert('No se pudo guardar en GitHub: ' + err.message);
+                    alert('No se pudo guardar en GitHub: ' + err.message + (err.status ? ` (código ${err.status})` : ' (revisa la consola del navegador - F12 - para más detalle, puede ser un problema de red)'));
                 }
             } finally {
                 if (btn) { btn.disabled = false; btn.textContent = '💾 GUARDAR EN GITHUB'; }
