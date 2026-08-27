@@ -709,6 +709,9 @@
 
     <div class="footer-button-area">
         <button class="btn-add-activity" onclick="resetData()" style="background: #95a5a6; margin-right: auto;">⟳ REINICIAR DATOS</button>
+        <button class="btn-add-activity" onclick="exportData()" style="background: #16a085;">⬇ EXPORTAR DATOS</button>
+        <button class="btn-add-activity" onclick="document.getElementById('importFileInput').click()" style="background: #2980b9;">⬆ IMPORTAR DATOS</button>
+        <input type="file" id="importFileInput" accept="application/json" style="display: none;" onchange="importData(event)">
         <button class="btn-add-activity" onclick="openModal()">+ AGREGAR ACTIVIDAD</button>
     </div>
 
@@ -851,6 +854,39 @@
             } catch (e) {
                 console.log('localStorage no disponible, datos en memoria');
             }
+        }
+
+        function exportData() {
+            const blob = new Blob([JSON.stringify(activitiesByTab, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const fecha = new Date().toISOString().slice(0, 10);
+            a.href = url;
+            a.download = `flujo-contratacion-backup-${fecha}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    Object.assign(activitiesByTab, imported);
+                    saveToLocalStorage();
+                    renderScenarios();
+                    alert('Datos importados correctamente');
+                } catch (err) {
+                    alert('El archivo no es un backup válido de este flujo');
+                    console.error('Error importing data:', err);
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
         }
 
         function initializeDefaultData() {
@@ -1424,6 +1460,9 @@
         });
 
         function resetData() {
+            if (!confirm('¿Seguro que deseas reiniciar TODOS los datos? Esta acción borra las actividades guardadas en este navegador y no se puede deshacer. Si quieres conservarlas, cancela y usa primero "EXPORTAR DATOS".')) {
+                return;
+            }
             try {
                 localStorage.clear();
             } catch (e) {
