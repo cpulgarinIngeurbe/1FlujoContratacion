@@ -902,10 +902,12 @@
                 if (resp.ok) {
                     const remote = await resp.json();
                     Object.assign(activitiesByTab, remote);
+                    return true;
                 }
             } catch (e) {
                 console.log('No se pudo cargar data/activities.json, usando datos por defecto/locales');
             }
+            return false;
         }
 
         function getGithubToken() {
@@ -996,7 +998,7 @@
             Object.assign(activitiesByTab, defaultData);
         }
 
-        function loadFromLocalStorage() {
+        function loadFromLocalStorage(skipDefaultFallback) {
             try {
                 const saved = localStorage.getItem('activitiesByTab');
                 if (saved) {
@@ -1004,14 +1006,14 @@
                         Object.assign(activitiesByTab, JSON.parse(saved));
                     } catch (e) {
                         console.error('Error loading from localStorage:', e);
-                        initializeDefaultData();
+                        if (!skipDefaultFallback) initializeDefaultData();
                     }
-                } else {
+                } else if (!skipDefaultFallback) {
                     initializeDefaultData();
                 }
             } catch (e) {
                 console.log('localStorage no disponible, usando datos de ejemplo');
-                initializeDefaultData();
+                if (!skipDefaultFallback) initializeDefaultData();
             }
         }
 
@@ -1582,8 +1584,8 @@
 
         async function initApp() {
             initializeDefaultData();
-            await loadRemoteData();
-            loadFromLocalStorage();
+            const remoteLoaded = await loadRemoteData();
+            loadFromLocalStorage(remoteLoaded);
             updateDate();
             initTabs();
             renderScenarios();
