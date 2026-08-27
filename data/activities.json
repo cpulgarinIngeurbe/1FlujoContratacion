@@ -1205,6 +1205,22 @@
       "enfasis": false,
       "hitoContinuo": false,
       "startDay": 1
+    },
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "fsd",
+      "nombreActividad": "fdsfs",
+      "duracion": 1,
+      "area": "COMITE",
+      "id": "4",
+      "actividadRelacionada": "1",
+      "tipoRelacion": "inicio-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
     }
   ]
 }
