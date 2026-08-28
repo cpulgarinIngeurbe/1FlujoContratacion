@@ -2118,7 +2118,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CALCULO DE CANTIDADES",
-      "nombreActividad": "CALCULO DE CANTIDADES",
+      "nombreActividad": "Calculo de cantidades",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "1",
@@ -2134,7 +2134,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "LICITACIONES",
-      "nombreActividad": "INVITACION DE PROVEEDORES NUEVOS ",
+      "nombreActividad": "Invitacion de proveedores Nuevos ",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "2",
@@ -2150,7 +2150,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "INVITACION DE PROVEEDORES EXISTENTES",
+      "nombreActividad": "Invitacion de proveedores existentes",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "3",
@@ -2166,7 +2166,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "CREACION LICITACION",
+      "nombreActividad": "Creacion licitacion",
       "duracion": 6,
       "area": "RESIDENTE_TECNICO",
       "id": "4",
@@ -2182,7 +2182,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "REVISA LICITACION DIRECTOR DE OBRA",
+      "nombreActividad": "revisa licitacion Director de obra",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "5",
@@ -2198,7 +2198,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "ENVIAR LICITACION A PROPONENTES",
+      "nombreActividad": "Enviar licitacion a proponentes",
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "6",
@@ -2214,7 +2214,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "COTIZAR CONTRATISTA",
+      "nombreActividad": "Cotizar Contratista",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "7",
@@ -2230,7 +2230,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "RECIBO DE COTIZACIÓN",
-      "nombreActividad": "REVISAR COTIZACION RESIDENTE DE OBRA",
+      "nombreActividad": "revisar cotizacion Residente de obra",
       "duracion": 7,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
@@ -2246,7 +2246,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "REVISAR COTIZACION DIRECTOR DE OBRA ",
+      "nombreActividad": "revisar cotizacion Director de obra ",
       "duracion": 7,
       "area": "DIRECTOR_OBRA",
       "id": "9",
@@ -2262,7 +2262,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
-      "nombreActividad": "REALIZAR EL CUADRO COMPARATIVO ",
+      "nombreActividad": "realizar el cuadro comparativo ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
@@ -2278,7 +2278,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "REALIZAR NEGOCIACIONES (ADENDAS)",
+      "nombreActividad": "Realizar Negociaciones (Adendas)",
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
@@ -2294,7 +2294,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "ADJUDICACION DEL CUADRO COMPARATIVO",
+      "nombreActividad": "Adjudicacion del cuadro comparativo",
       "duracion": 4,
       "area": "COMITE",
       "id": "12",
@@ -2310,7 +2310,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
-      "nombreActividad": "REVISAR LICITACION RESIDETE DE CONTROL",
+      "nombreActividad": "revisar Licitacion Residete de Control",
       "duracion": 4,
       "area": "CONTROL_COSTOS",
       "id": "13",
@@ -2326,7 +2326,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CONCILIACIÓN",
-      "nombreActividad": "REVISION ,ASIGNACION 2 PPTO DE CUADRO COMPARATIVO ",
+      "nombreActividad": "Revision ,asignacion 2 ppto de cuadro comparativo ",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "14",
@@ -2342,7 +2342,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
-      "nombreActividad": "APROBACION CUADRO COMPARATIVO  DIRECTOR DE OBRA",
+      "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
       "duracion": 1,
       "area": "DIRECTOR_OBRA",
       "id": "15",
@@ -2358,7 +2358,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "APROBACION CUADRO COMPARATIVO  RESIDENTE DE CONTROL",
+      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "16",
@@ -2374,7 +2374,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "APROBACION CUADRO COMPARATIVO  SUBGERENTE DE CONSTRUCCION",
+      "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "17",
@@ -2390,7 +2390,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "APROBACION CUADRO COMPARATIVO  GERENTE DE CONSTRUCCION",
+      "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
       "id": "18",
@@ -2406,7 +2406,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CREACIÓN DE TERCERO",
-      "nombreActividad": "ADJUNTAR  DILIGENCIAR INFORMACIÓN CONTRATISTAS",
+      "nombreActividad": "Adjuntar  diligenciar información contratistas",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "19",
@@ -2422,7 +2422,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "VERIFICACION DE SAGRILAFT",
+      "nombreActividad": "Verificacion de SAGRILAFT",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
       "id": "20",
@@ -2438,7 +2438,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "APROBACION DE OFICIAL DE CUMPLIMIENTO ",
+      "nombreActividad": "Aprobacion de oficial de cumplimiento ",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
       "id": "21",
@@ -2454,7 +2454,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "HABILITAR PROVEDORE A&F",
+      "nombreActividad": "Habilitar provedore A&F",
       "duracion": 2,
       "area": "CONTABILIDAD",
       "id": "22",
@@ -2470,7 +2470,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "PROYECCIÓN",
-      "nombreActividad": "PROYECCION DE CUADRO COMPARATIVO",
+      "nombreActividad": "proyeccion de cuadro comparativo",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "23",
@@ -2486,7 +2486,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO",
-      "nombreActividad": "GENERACIÓN DE  CONTRATO",
+      "nombreActividad": "Generación de  contrato",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
@@ -2502,7 +2502,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "APROBACIÓN EN SINCO",
-      "nombreActividad": "APROBACION EN SINCO ADPRO",
+      "nombreActividad": "Aprobacion en Sinco ADPRO",
       "duracion": 1,
       "area": "COSTOS_CONSTRUCCION",
       "id": "25",
@@ -2630,7 +2630,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "AUTOMATIZACION DE FIRMAS CONTRATO ZOHO",
+      "nombreActividad": "Automatizacion de Firmas Contrato Zoho",
       "duracion": 2,
       "area": "ADMINISTRATIVO",
       "id": "33",
