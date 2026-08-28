@@ -222,6 +222,27 @@
             font-size: 13px;
         }
 
+        .col-resize-handle {
+            position: absolute;
+            right: -8px;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #bdc3c7;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .col-resize-handle:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
         .header-responsable {
             width: 150px;
             padding: 8px 12px;
@@ -851,6 +872,37 @@
         let comparativoTab1 = 'optimista';
         let comparativoTab2 = 'srm-automatizacion';
 
+        let actividadColWidth = parseInt(localStorage.getItem('actividadColWidth')) || 280;
+
+        function applyActividadColWidth() {
+            const totalWidth = 50 + 200 + 150 + actividadColWidth;
+            document.querySelectorAll('.header-actividad').forEach(el => el.style.width = actividadColWidth + 'px');
+            document.querySelectorAll('.actividad-name').forEach(el => el.style.width = actividadColWidth + 'px');
+            document.querySelectorAll('.escala-labels').forEach(el => el.style.width = totalWidth + 'px');
+            document.querySelectorAll('.escala-container > .escala-labels > .header').forEach(el => el.style.width = totalWidth + 'px');
+        }
+
+        document.addEventListener('mousedown', function(e) {
+            if (!e.target.classList.contains('col-resize-handle')) return;
+            e.preventDefault();
+            const startX = e.clientX;
+            const startWidth = actividadColWidth;
+            document.body.style.cursor = 'col-resize';
+            function onMouseMove(ev) {
+                const delta = ev.clientX - startX;
+                actividadColWidth = Math.min(600, Math.max(120, startWidth + delta));
+                applyActividadColWidth();
+            }
+            function onMouseUp() {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+                document.body.style.cursor = '';
+                try { localStorage.setItem('actividadColWidth', actividadColWidth); } catch (e) {}
+            }
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+
         function saveToLocalStorage() {
             try {
                 localStorage.setItem('activitiesByTab', JSON.stringify(activitiesByTab));
@@ -1342,11 +1394,11 @@
             maxDays = Math.max(maxDays, 50);
             window.currentMaxDays = maxDays;
             const contentWidth = maxDays * 10 + 40;
-            html += '<div class="escala-container"><div class="escala-labels"><div class="header" style="width: 680px;"><div class="header-id">ID</div><div class="header-capitulo">Capítulo</div><div class="header-actividad">Actividad</div><div class="header-responsable">Responsable</div></div>';
+            html += `<div class="escala-container"><div class="escala-labels" style="width: ${50 + 200 + 150 + actividadColWidth}px;"><div class="header" style="width: ${50 + 200 + 150 + actividadColWidth}px;"><div class="header-id">ID</div><div class="header-capitulo">Capítulo</div><div class="header-actividad" style="width: ${actividadColWidth}px; position: relative;">Actividad<div class="col-resize-handle" title="Arrastra para cambiar el ancho">↔</div></div><div class="header-responsable">Responsable</div></div>`;
             activities.forEach((act, idx) => {
                 const responsableColor = getColorForArea(act.area);
                 const responsableLabel = areaLabels[act.area] || '';
-                html += `<div class="row" onclick="showDeleteConfirm(${idx})"><div class="id-name">${act.id}</div><div class="capitulo-name">${act.capitulo}</div><div class="actividad-name" style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'};">${act.nombreActividad}</div><div class="responsable-name"><span class="responsable-dot" style="background-color: ${responsableColor};"></span>${responsableLabel}</div></div>`;
+                html += `<div class="row" onclick="showDeleteConfirm(${idx})"><div class="id-name">${act.id}</div><div class="capitulo-name">${act.capitulo}</div><div class="actividad-name" style="width: ${actividadColWidth}px; color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'};">${act.nombreActividad}</div><div class="responsable-name"><span class="responsable-dot" style="background-color: ${responsableColor};"></span>${responsableLabel}</div></div>`;
             });
             html += '</div><div class="escala" id="escalaMain" data-max-days="' + maxDays + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
             html += `<div class="escala-label-dias" style="width: ${maxDays * 10}px; min-width: ${maxDays * 10}px; flex-shrink: 0;">${Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: 10px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('')}</div>`;
@@ -1378,6 +1430,7 @@
             });
             html += '</div></div>';
             container.innerHTML = html;
+            applyActividadColWidth();
         }
 
         function openModal() {
