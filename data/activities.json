@@ -1325,14 +1325,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "9",
-      "actividadRelacionada": "8",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 9
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1341,14 +1341,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
-      "actividadRelacionada": "7",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 9
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1357,30 +1357,30 @@
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
-      "actividadRelacionada": "8",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 9
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
-      "capitulo": "",
+      "capitulo": "PRESENTACIÓN DE CUADRO COMPARATIVO A COMITÉ",
       "nombreActividad": "CUADRO COMPARATIVO: Adjudicacion del cuadro comparativo",
       "duracion": 1,
       "area": "COMITE",
       "id": "12",
-      "actividadRelacionada": "11",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 11
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1389,14 +1389,14 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "13",
-      "actividadRelacionada": "12",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1405,46 +1405,46 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "14",
-      "actividadRelacionada": "13",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
-      "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
-      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
+      "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO: Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "15",
-      "actividadRelacionada": "14",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 16
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO: Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "16",
-      "actividadRelacionada": "15",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1453,14 +1453,14 @@
       "duracion": 2,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "17",
-      "actividadRelacionada": "15",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1469,14 +1469,14 @@
       "duracion": 2,
       "area": "GERENTE_CONSTRUCCION",
       "id": "18",
-      "actividadRelacionada": "17",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 20
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1485,14 +1485,14 @@
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "19",
-      "actividadRelacionada": "18",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 22
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1504,7 +1504,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1520,7 +1520,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1565,14 +1565,14 @@
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
-      "actividadRelacionada": "23",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 3
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1588,7 +1588,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 4
+      "startDay": 2
     },
     {
       "pestaña": "flujo-srm",
@@ -1597,14 +1597,14 @@
       "duracion": 2,
       "area": "ADMINISTRATIVO",
       "id": "26",
-      "actividadRelacionada": "25",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "IA-TECNOLOGIA",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 5
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1613,14 +1613,14 @@
       "duracion": 5,
       "area": "CONTRATISTA",
       "id": "27",
-      "actividadRelacionada": "26",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "IA-TECNOLOGIA",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 7
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1636,7 +1636,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 7
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1652,7 +1652,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 6
     },
     {
       "pestaña": "flujo-srm",
@@ -1668,7 +1668,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1684,7 +1684,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1700,7 +1700,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1716,7 +1716,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     }
   ],
   "flujo-srm-parametrizacion": [
