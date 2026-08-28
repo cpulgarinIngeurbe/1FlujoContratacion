@@ -1587,7 +1587,7 @@
   "flujo-srm-acordado": [
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "CALCULO DE CANTIDADES",
       "nombreActividad": "CALCULO DE CANTIDADES: Calculo de cantidades",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
@@ -1731,7 +1731,7 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL: realizar el cuadro comparativo ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
@@ -1939,7 +1939,7 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "SOLICITUD DE CONTRATACION",
       "nombreActividad": "PROYECCION: proyeccion de cuadro comparativo",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
@@ -1955,7 +1955,7 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "ELABORACION DE CONTRATO",
       "nombreActividad": "MIGRACION DE SOLICITUD DE CONTRATO SINCO: Generación de  contrato",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
@@ -2003,7 +2003,7 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "PERFECCIONAMIENTO DE CONTRATO",
       "nombreActividad": "ENVÍO A CONTROL INTERNO",
       "duracion": 5,
       "area": "ADMINISTRATIVO",
@@ -2035,7 +2035,7 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
+      "capitulo": "CORTES DE OBRA",
       "nombreActividad": "PREACTAS DIGITALES",
       "duracion": 7,
       "area": "DIRECTOR",
