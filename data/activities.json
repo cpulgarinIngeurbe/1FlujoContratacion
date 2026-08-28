@@ -1836,17 +1836,17 @@
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "Creacion licitacion",
-      "duracion": 9,
+      "duracion": 6,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
-      "actividadRelacionada": "4",
-      "tipoRelacion": "inicio-inicio",
+      "actividadRelacionada": "7",
+      "tipoRelacion": "fin-fin",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 5
+      "startDay": 8
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
