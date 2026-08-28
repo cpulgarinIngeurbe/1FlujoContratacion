@@ -1193,7 +1193,7 @@
     {
       "pestaña": "flujo-srm",
       "capitulo": "CALCULO DE CANTIDADES",
-      "nombreActividad": "Calculo de cantidades",
+      "nombreActividad": "CALCULO DE CANTIDADES: CALCULO DE CANTIDADES",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "1",
@@ -1209,11 +1209,11 @@
     {
       "pestaña": "flujo-srm",
       "capitulo": "LICITACIONES",
-      "nombreActividad": "Invitacion de proveedores Nuevos ",
+      "nombreActividad": "LICITACIONES: Invitacion de proveedores Nuevos ",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "2",
-      "actividadRelacionada": "1",
+      "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
@@ -1225,11 +1225,11 @@
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Invitacion de proveedores existentes",
+      "nombreActividad": "LICITACIONES: Invitacion de proveedores existentes",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "3",
-      "actividadRelacionada": "2",
+      "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
@@ -1241,194 +1241,194 @@
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Creacion licitacion",
+      "nombreActividad": "LICITACIONES: Creacion licitacion",
       "duracion": 9,
       "area": "RESIDENTE_TECNICO",
       "id": "4",
-      "actividadRelacionada": "3",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 5
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "revisa licitacion Director de obra",
+      "nombreActividad": "LICITACIONES: revisa licitacion Director de obra",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "5",
-      "actividadRelacionada": "4",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Enviar licitacion a proponentes",
+      "nombreActividad": "LICITACIONES: Enviar licitacion a proponentes",
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "6",
-      "actividadRelacionada": "5",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 16
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Cotizar Contratista",
+      "nombreActividad": "LICITACIONES: Cotizar Contratista",
       "duracion": 8,
       "area": "CONTRATISTA",
       "id": "7",
-      "actividadRelacionada": "6",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 17
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "RECIBO DE COTIZACIÓN",
-      "nombreActividad": "revisar cotizacion Residente de obra",
+      "nombreActividad": "RECIBO COTIZACIÓN: revisar cotizacion Residente de obra",
       "duracion": 8,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
-      "actividadRelacionada": "7",
+      "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 17
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "revisar cotizacion Director de obra ",
+      "nombreActividad": "RECIBO DE COTIZACIÓN: revisar cotizacion Director de obra ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "9",
-      "actividadRelacionada": "8",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
-      "nombreActividad": "realizar el cuadro comparativo ",
+      "nombreActividad": "CUADRO COMPARATIVO: realizar el cuadro comparativo ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
-      "actividadRelacionada": "8",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Realizar Negociaciones (Adendas)",
+      "nombreActividad": "CUADRO COMPARATIVO: Realizar Negociaciones (Adendas)",
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
-      "actividadRelacionada": "8",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Adjudicacion del cuadro comparativo",
+      "nombreActividad": "CUADRO COMPARATIVO: Adjudicacion del cuadro comparativo",
       "duracion": 1,
       "area": "COMITE",
       "id": "12",
-      "actividadRelacionada": "11",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 27
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
-      "nombreActividad": "revisar Licitacion Residete de Control",
+      "nombreActividad": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS: revisar Licitacion Residente de Control",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "13",
-      "actividadRelacionada": "12",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 28
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "CONCILIACIÓN",
-      "nombreActividad": "Revision ,asignacion 2 ppto de cuadro comparativo ",
+      "nombreActividad": "CONCILIACIÓN: Revision ,asignacion 2 ppto de cuadro comparativo ",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "14",
-      "actividadRelacionada": "13",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 30
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
-      "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "15",
-      "actividadRelacionada": "14",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 32
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1444,7 +1444,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 34
+      "startDay": 3
     },
     {
       "pestaña": "flujo-srm",
@@ -1460,7 +1460,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 34
+      "startDay": 3
     },
     {
       "pestaña": "flujo-srm",
@@ -1476,7 +1476,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 5
     },
     {
       "pestaña": "flujo-srm",
@@ -1556,7 +1556,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 38
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1572,7 +1572,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 40
+      "startDay": 9
     },
     {
       "pestaña": "flujo-srm",
@@ -1588,7 +1588,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 41
+      "startDay": 10
     },
     {
       "pestaña": "flujo-srm",
@@ -1604,7 +1604,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 11
     },
     {
       "pestaña": "flujo-srm",
@@ -1620,7 +1620,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 13
     },
     {
       "pestaña": "flujo-srm",
@@ -1636,7 +1636,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 13
     },
     {
       "pestaña": "flujo-srm",
@@ -1652,7 +1652,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 49
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1668,7 +1668,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 50
+      "startDay": 19
     },
     {
       "pestaña": "flujo-srm",
@@ -1684,7 +1684,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 50
+      "startDay": 19
     },
     {
       "pestaña": "flujo-srm",
@@ -1700,7 +1700,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 50
+      "startDay": 19
     },
     {
       "pestaña": "flujo-srm",
@@ -1716,7 +1716,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 50
+      "startDay": 19
     }
   ],
   "flujo-srm-parametrizacion": [
