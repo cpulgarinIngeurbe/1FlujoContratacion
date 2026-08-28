@@ -1588,7 +1588,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "CALCULO DE CANTIDADES",
-      "nombreActividad": "Calculo de cantidades",
+      "nombreActividad": "CALCULO DE CANTIDADES",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "1",
@@ -1604,7 +1604,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "LICITACIONES",
-      "nombreActividad": "Invitacion de proveedores Nuevos ",
+      "nombreActividad": "INVITACION DE PROVEEDORES NUEVOS",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "2",
@@ -1620,7 +1620,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Invitacion de proveedores existentes",
+      "nombreActividad": "INVITACION DE PROVEEDORES EXISTENTES",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "3",
@@ -1636,7 +1636,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "CREACIÓN DE TERCERO",
-      "nombreActividad": "Adjuntar  diligenciar información contratistas",
+      "nombreActividad": "ADJUNTAR DILIGENCIAR INFORMACIÓN CONTRATISTAS",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "4",
@@ -1652,7 +1652,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Verificacion de SAGRILAFT",
+      "nombreActividad": "VERIFICACION DE SAGRILAFT",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
       "id": "5",
@@ -1668,7 +1668,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Aprobacion de oficial de cumplimiento ",
+      "nombreActividad": "APROBACION DE OFICIAL DE CUMPLIMIENTO",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
       "id": "6",
@@ -1684,7 +1684,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Habilitar provedore A&F",
+      "nombreActividad": "HABILITAR PROVEEDORES A&F",
       "duracion": 2,
       "area": "CONTABILIDAD",
       "id": "7",
@@ -1700,7 +1700,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Creacion licitacion",
+      "nombreActividad": "CREACION LICITACION",
       "duracion": 6,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
@@ -1716,7 +1716,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "revisa licitacion Director de obra",
+      "nombreActividad": "REVISA LICITACION DIRECTOR DE OBRA",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "9",
@@ -1732,7 +1732,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
-      "nombreActividad": "revisar Licitacion Residete de Control",
+      "nombreActividad": "REVISAR LICITACION RESIDENTE DE CONTROL",
       "duracion": 4,
       "area": "CONTROL_COSTOS",
       "id": "10",
@@ -1748,7 +1748,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Enviar licitacion a proponentes",
+      "nombreActividad": "ENVIAR LICITACION A PROPONENTES",
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "11",
@@ -1764,7 +1764,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Cotizar Contratista",
+      "nombreActividad": "COTIZAR CONTRATISTA",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "12",
@@ -1780,7 +1780,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "RECIBO DE COTIZACIÓN",
-      "nombreActividad": "revisar cotizacion Residente de obra",
+      "nombreActividad": "REVISAR COTIZACION RESIDENTE DE OBRA",
       "duracion": 7,
       "area": "RESIDENTE_TECNICO",
       "id": "13",
@@ -1796,7 +1796,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "revisar cotizacion Director de obra ",
+      "nombreActividad": "REVISAR COTIZACION DIRECTOR DE OBRA",
       "duracion": 7,
       "area": "DIRECTOR_OBRA",
       "id": "14",
@@ -1812,7 +1812,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
-      "nombreActividad": "realizar el cuadro comparativo ",
+      "nombreActividad": "REALIZAR EL CUADRO COMPARATIVO",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "15",
