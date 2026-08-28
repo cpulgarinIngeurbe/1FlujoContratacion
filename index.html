@@ -1478,6 +1478,7 @@
             document.getElementById('duracion').value = activity.duracion;
             document.getElementById('area').value = activity.area;
             document.getElementById('id').value = activity.id;
+            populateRelatedActivities();
             document.getElementById('actividadRelacionada').value = activity.actividadRelacionada || '';
             document.getElementById('tipoRelacion').value = activity.tipoRelacion || '';
             document.getElementById('holgura').value = activity.holgura || 0;
@@ -1487,7 +1488,6 @@
             document.getElementById('hitoContinuo').checked = activity.hitoContinuo || false;
             document.getElementById('modal').classList.add('active');
             document.getElementById('btnDelete').style.display = 'inline-block';
-            populateRelatedActivities();
         }
 
         function deleteActivity() {
