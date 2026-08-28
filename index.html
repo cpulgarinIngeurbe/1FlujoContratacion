@@ -530,6 +530,28 @@
             justify-content: flex-end;
         }
 
+        .footer-toggle-bar {
+            padding: 4px 20px;
+            background: white;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-toggle-footer {
+            padding: 4px 10px;
+            border: none;
+            background: transparent;
+            color: #7f8c8d;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .btn-toggle-footer:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+
         .btn-add-activity {
             padding: 12px 24px;
             background: #2c3e50;
@@ -795,7 +817,10 @@
         <!-- Los escenarios se generan dinámicamente -->
     </div>
 
-    <div class="footer-button-area">
+    <div class="footer-toggle-bar">
+        <button class="btn-toggle-footer" id="btnToggleFooter" onclick="toggleFooterButtons()">⌄ Ocultar botones</button>
+    </div>
+    <div class="footer-button-area" id="footerButtonsRow">
         <button class="btn-add-activity" onclick="resetData()" style="background: #95a5a6; margin-right: auto;">⟳ REINICIAR DATOS</button>
         <button class="btn-add-activity" onclick="configurarToken()" style="background: #6e7781; font-size: 11px;">🔑 TOKEN</button>
         <button class="btn-add-activity" id="btnGuardarGithub" onclick="saveToGithub()" style="background: #24292f;">💾 GUARDAR EN GITHUB</button>
@@ -948,6 +973,23 @@
         let hiddenTabs = [];
         try { hiddenTabs = JSON.parse(localStorage.getItem('hiddenTabs') || '[]'); } catch (e) { hiddenTabs = []; }
 
+        let footerButtonsHidden = false;
+        try { footerButtonsHidden = JSON.parse(localStorage.getItem('footerButtonsHidden') || 'false'); } catch (e) { footerButtonsHidden = false; }
+
+        function applyFooterButtonsVisibility() {
+            const row = document.getElementById('footerButtonsRow');
+            const btn = document.getElementById('btnToggleFooter');
+            if (!row || !btn) return;
+            row.style.display = footerButtonsHidden ? 'none' : 'flex';
+            btn.textContent = footerButtonsHidden ? '⌃ Mostrar botones' : '⌄ Ocultar botones';
+        }
+
+        function toggleFooterButtons() {
+            footerButtonsHidden = !footerButtonsHidden;
+            try { localStorage.setItem('footerButtonsHidden', JSON.stringify(footerButtonsHidden)); } catch (e) {}
+            applyFooterButtonsVisibility();
+        }
+
         let actividadColWidth = parseInt(localStorage.getItem('actividadColWidth')) || 280;
 
         function applyActividadColWidth() {
@@ -1030,6 +1072,17 @@
                 const resp = await fetch(GITHUB_PATH, {cache: 'no-store'});
                 if (resp.ok) {
                     const remote = await resp.json();
+                    if (remote.__viewState) {
+                        if (Array.isArray(remote.__viewState.hiddenTabs)) {
+                            hiddenTabs = remote.__viewState.hiddenTabs;
+                            try { localStorage.setItem('hiddenTabs', JSON.stringify(hiddenTabs)); } catch (e) {}
+                        }
+                        if (typeof remote.__viewState.footerButtonsHidden === 'boolean') {
+                            footerButtonsHidden = remote.__viewState.footerButtonsHidden;
+                            try { localStorage.setItem('footerButtonsHidden', JSON.stringify(footerButtonsHidden)); } catch (e) {}
+                        }
+                        delete remote.__viewState;
+                    }
                     Object.assign(activitiesByTab, remote);
                     return true;
                 }
@@ -1086,7 +1139,8 @@
                     e.status = getResp.status;
                     throw e;
                 }
-                const content = utf8ToBase64(JSON.stringify(activitiesByTab, null, 2));
+                const dataToSave = {...activitiesByTab, __viewState: {hiddenTabs, footerButtonsHidden}};
+                const content = utf8ToBase64(JSON.stringify(dataToSave, null, 2));
                 const putResp = await fetch(apiUrl, {
                     method: 'PUT',
                     headers: {Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json'},
@@ -1803,6 +1857,7 @@
             }
             initTabs();
             renderScenarios();
+            applyFooterButtonsVisibility();
         }
         initApp();
     </script>
