@@ -67,6 +67,69 @@
             color: white;
         }
 
+        .tab-hide-btn {
+            display: inline-block;
+            margin-left: 8px;
+            opacity: 0.5;
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .tab-hide-btn:hover {
+            opacity: 1;
+        }
+
+        .tabs-visibility-wrapper {
+            position: relative;
+        }
+
+        .btn-toggle-tabs {
+            padding: 8px 15px;
+            border: none;
+            background: white;
+            color: #2c3e50;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            border-left: 3px solid #2c3e50;
+            white-space: nowrap;
+        }
+
+        .btn-toggle-tabs:hover {
+            background: #f0f0f0;
+        }
+
+        .tabs-panel {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 6px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 10px;
+            min-width: 240px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .tabs-panel-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            font-size: 13px;
+            font-weight: normal;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .tabs-panel-item:hover {
+            background: #f0f0f0;
+        }
+
         .scenario-container {
             display: none;
             flex-direction: column;
@@ -716,6 +779,10 @@
     <div class="title-container">
         <div class="title">ESCENARIOS DE OPTIMIZACIÓN PROCESO DE CONTRATACIÓN</div>
         <div class="fecha-actualizacion" id="fecha"></div>
+        <div class="tabs-visibility-wrapper">
+            <button class="btn-toggle-tabs" onclick="toggleTabsPanel()">👁 PESTAÑAS</button>
+            <div id="tabsPanel" class="tabs-panel" style="display: none;"></div>
+        </div>
     </div>
 
 
@@ -872,6 +939,9 @@
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
         let comparativoTab2 = 'srm-automatizacion';
+
+        let hiddenTabs = [];
+        try { hiddenTabs = JSON.parse(localStorage.getItem('hiddenTabs') || '[]'); } catch (e) { hiddenTabs = []; }
 
         let actividadColWidth = parseInt(localStorage.getItem('actividadColWidth')) || 280;
 
@@ -1116,10 +1186,20 @@
             const tabsContainer = document.getElementById('tabsContainer');
             tabsContainer.innerHTML = '';
             Object.keys(tabConfig).forEach(tabId => {
+                if (hiddenTabs.includes(tabId)) return;
                 const button = document.createElement('button');
                 button.className = `tab-button ${tabId === currentTab ? 'active' : ''}`;
-                button.textContent = tabConfig[tabId];
+                button.dataset.tabId = tabId;
                 button.onclick = () => switchTab(tabId);
+                const label = document.createElement('span');
+                label.textContent = tabConfig[tabId];
+                button.appendChild(label);
+                const hideBtn = document.createElement('span');
+                hideBtn.className = 'tab-hide-btn';
+                hideBtn.textContent = '✕';
+                hideBtn.title = 'Ocultar esta pestaña';
+                hideBtn.onclick = (e) => { e.stopPropagation(); hideTab(tabId); };
+                button.appendChild(hideBtn);
                 tabsContainer.appendChild(button);
             });
         }
@@ -1131,11 +1211,76 @@
         }
 
         function updateTabButtons() {
-            document.querySelectorAll('.tab-button').forEach((btn, idx) => {
-                const tabId = Object.keys(tabConfig)[idx];
-                btn.classList.toggle('active', tabId === currentTab);
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tabId === currentTab);
             });
         }
+
+        function visibleTabCount() {
+            return Object.keys(tabConfig).filter(id => !hiddenTabs.includes(id)).length;
+        }
+
+        function setTabHidden(tabId, hidden) {
+            if (hidden) {
+                if (visibleTabCount() <= 1) {
+                    alert('Debe quedar al menos una pestaña visible.');
+                    return false;
+                }
+                if (!hiddenTabs.includes(tabId)) hiddenTabs.push(tabId);
+                if (currentTab === tabId) {
+                    const nextVisible = Object.keys(tabConfig).find(id => !hiddenTabs.includes(id));
+                    if (nextVisible) currentTab = nextVisible;
+                }
+            } else {
+                hiddenTabs = hiddenTabs.filter(id => id !== tabId);
+            }
+            try { localStorage.setItem('hiddenTabs', JSON.stringify(hiddenTabs)); } catch (e) {}
+            initTabs();
+            renderScenarios();
+            return true;
+        }
+
+        function hideTab(tabId) {
+            setTabHidden(tabId, true);
+        }
+
+        function renderTabsPanel() {
+            const panel = document.getElementById('tabsPanel');
+            panel.innerHTML = '';
+            Object.keys(tabConfig).forEach(tabId => {
+                const label = document.createElement('label');
+                label.className = 'tabs-panel-item';
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = !hiddenTabs.includes(tabId);
+                checkbox.onchange = () => {
+                    const ok = setTabHidden(tabId, !checkbox.checked);
+                    if (ok === false) checkbox.checked = true;
+                    renderTabsPanel();
+                };
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(tabConfig[tabId]));
+                panel.appendChild(label);
+            });
+        }
+
+        function toggleTabsPanel() {
+            const panel = document.getElementById('tabsPanel');
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                renderTabsPanel();
+                panel.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            const wrapper = document.querySelector('.tabs-visibility-wrapper');
+            const panel = document.getElementById('tabsPanel');
+            if (wrapper && panel && panel.style.display === 'block' && !wrapper.contains(e.target)) {
+                panel.style.display = 'none';
+            }
+        });
 
         function renderScenarios() {
             const wrapper = document.getElementById('scenariosWrapper');
@@ -1644,6 +1789,10 @@
             const remoteLoaded = await loadRemoteData();
             loadFromLocalStorage(remoteLoaded);
             updateDate();
+            if (hiddenTabs.includes(currentTab)) {
+                const nextVisible = Object.keys(tabConfig).find(id => !hiddenTabs.includes(id));
+                if (nextVisible) currentTab = nextVisible;
+            }
             initTabs();
             renderScenarios();
         }
