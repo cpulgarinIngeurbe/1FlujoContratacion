@@ -1652,7 +1652,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "revisa licitacion Director de obra",
+      "nombreActividad": "LICITACIONES: revisa licitacion Director de obra",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "5",
@@ -1668,7 +1668,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Enviar licitacion a proponentes",
+      "nombreActividad": "LICITACIONES: Enviar licitacion a proponentes",
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "6",
@@ -1684,7 +1684,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Cotizar Contratista",
+      "nombreActividad": "LICITACIONES: Cotizar Contratista",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "7",
@@ -1700,7 +1700,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "RECIBO DE COTIZACIÓN",
-      "nombreActividad": "revisar cotizacion Residente de obra",
+      "nombreActividad": "RECIBO DE COTIZACION: revisar cotizacion Residente de obra",
       "duracion": 7,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
@@ -1716,7 +1716,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "revisar cotizacion Director de obra ",
+      "nombreActividad": "RECIBO DE COTIZACION: revisar cotizacion Director de obra ",
       "duracion": 7,
       "area": "DIRECTOR_OBRA",
       "id": "9",
@@ -1732,7 +1732,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
-      "nombreActividad": "realizar el cuadro comparativo ",
+      "nombreActividad": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL: realizar el cuadro comparativo ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
@@ -1748,7 +1748,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Realizar Negociaciones (Adendas)",
+      "nombreActividad": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL: Realizar Negociaciones (Adendas)",
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
@@ -1764,7 +1764,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Adjudicacion del cuadro comparativo",
+      "nombreActividad": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL: Adjudicacion del cuadro comparativo",
       "duracion": 4,
       "area": "COMITE",
       "id": "12",
@@ -1780,7 +1780,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
-      "nombreActividad": "revisar Licitacion Residete de Control",
+      "nombreActividad": "REVISION POR AREA DE CONTROL DE COSTOS: revisar Licitacion Residete de Control",
       "duracion": 4,
       "area": "CONTROL_COSTOS",
       "id": "13",
@@ -1796,7 +1796,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CONCILIACIÓN",
-      "nombreActividad": "Revision ,asignacion 2 ppto de cuadro comparativo ",
+      "nombreActividad": "CONCILIACION: Revision ,asignacion 2 ppto de cuadro comparativo ",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "14",
@@ -1812,7 +1812,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
-      "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
+      "nombreActividad": "PRESENTACION CUADRO COMPARATIVO COMITE: Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
       "duracion": 1,
       "area": "DIRECTOR_OBRA",
       "id": "15",
@@ -1924,7 +1924,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Habilitar provedore A&F",
+      "nombreActividad": "CREACION DE TERCERO: Habilitar provedore A&F",
       "duracion": 2,
       "area": "CONTABILIDAD",
       "id": "22",
