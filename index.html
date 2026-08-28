@@ -752,7 +752,6 @@
                         <option value="srm-automatizacion">Proceso Optimizado SRM+Automatización (41 días)</option>
                         <option value="flujo-base">Flujo base (41 días)</option>
                         <option value="srm-validado">Proceso Validado SRM+Automatización (46 días)</option>
-                        <option value="flujo-srm">Flujo SRM</option>
                         <option value="flujo-srm-parametrizacion">Flujo SRM Parametrización</option>
                     </select>
                 </div>
@@ -866,8 +865,8 @@
     </div>
 
     <script>
-        const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'flujo-base': [], 'srm-validado': [], 'flujo-srm': [], 'flujo-srm-parametrizacion': []};
-        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'flujo-base': 'Flujo base (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-srm': 'Flujo SRM', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización', 'comparativo': 'Comparativo Escenarios'};
+        const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'flujo-base': [], 'srm-validado': [], 'flujo-srm-parametrizacion': []};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'flujo-base': 'Flujo base (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización', 'comparativo': 'Comparativo Escenarios'};
         let currentTab = 'optimista';
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
@@ -1631,7 +1630,6 @@
             activitiesByTab['srm-automatizacion'] = [];
             activitiesByTab['flujo-base'] = [];
             activitiesByTab['srm-validado'] = [];
-            activitiesByTab['flujo-srm'] = [];
             activitiesByTab['flujo-srm-parametrizacion'] = [];
             initializeDefaultData();
             saveToLocalStorage();
