@@ -2149,7 +2149,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "LICITACIONES",
       "nombreActividad": "INVITACION DE PROVEEDORES EXISTENTES",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
@@ -2181,7 +2181,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "CREACION DE TERCERO",
       "nombreActividad": "VERIFICACION DE SAGRILAFT",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
@@ -2197,7 +2197,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "CREACION DE TERCERO",
       "nombreActividad": "APROBACION DE OFICIAL DE CUMPLIMIENTO",
       "duracion": 2,
       "area": "OFICIAL_CUMPLIMIENTO",
@@ -2213,7 +2213,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "CREACION DE TERCERO",
       "nombreActividad": "HABILITAR PROVEEDORES A&F",
       "duracion": 2,
       "area": "CONTABILIDAD",
@@ -2229,7 +2229,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "LICITACIONES",
       "nombreActividad": "CREACION LICITACION",
       "duracion": 6,
       "area": "RESIDENTE_TECNICO",
@@ -2245,7 +2245,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "LICITACIONES",
       "nombreActividad": "REVISA LICITACION DIRECTOR DE OBRA",
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
@@ -2277,7 +2277,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "LICITACIONES",
       "nombreActividad": "ENVIAR LICITACION A PROPONENTES",
       "duracion": 1,
       "area": "DIRECTOR",
@@ -2293,7 +2293,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "LICITACIONES",
       "nombreActividad": "COTIZAR CONTRATISTA",
       "duracion": 7,
       "area": "CONTRATISTA",
@@ -2325,7 +2325,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "RECIBO DE COTIZACIÓN",
       "nombreActividad": "REVISAR COTIZACION DIRECTOR DE OBRA",
       "duracion": 7,
       "area": "DIRECTOR_OBRA",
@@ -2357,7 +2357,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
       "nombreActividad": "REALIZAR NEGOCIACIONES (ADENDAS)",
       "duracion": 2,
       "area": "DIRECTOR",
@@ -2389,7 +2389,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
       "nombreActividad": "ADJUDICACION DEL CUADRO COMPARATIVO",
       "duracion": 4,
       "area": "COMITE",
@@ -2421,7 +2421,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "APROBACION CUADRO COMPARATIVO",
       "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
@@ -2437,7 +2437,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "APROBACION CUADRO COMPARATIVO",
       "nombreActividad": "APROBACION CUADRO COMPARATIVO SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
@@ -2453,7 +2453,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "APROBACION CUADRO COMPARATIVO",
       "nombreActividad": "APROBACION CUADRO COMPARATIVO GERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
@@ -2517,7 +2517,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "FIRMAS ZOHO",
       "nombreActividad": "AUTOMATIZACION DE FIRMAS CONTRATO ZOHO",
       "duracion": 2,
       "area": "ADMINISTRATIVO",
@@ -2533,7 +2533,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "",
+      "capitulo": "TRÁMITE, RECEPCIÓN Y REVISIÓN PÓLIZAS",
       "nombreActividad": "TRÁMITE, RECEPCIÓN Y REVISIÓN PÓLIZAS",
       "duracion": 5,
       "area": "CONTRATISTA",
