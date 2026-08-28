@@ -1868,7 +1868,7 @@
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
       "nombreActividad": "revisar Licitacion Residete de Control",
-      "duracion": 2,
+      "duracion": 4,
       "area": "CONTROL_COSTOS",
       "id": "10",
       "actividadRelacionada": "9",
@@ -1894,7 +1894,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 20
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1903,14 +1903,14 @@
       "duracion": 8,
       "area": "CONTRATISTA",
       "id": "12",
-      "actividadRelacionada": "",
-      "tipoRelacion": "fin-inicio",
+      "actividadRelacionada": "11",
+      "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 20
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1919,14 +1919,14 @@
       "duracion": 8,
       "area": "RESIDENTE_TECNICO",
       "id": "13",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "12",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 20
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1935,14 +1935,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "14",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "13",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 28
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1951,14 +1951,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "15",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "13",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 28
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1967,14 +1967,14 @@
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "16",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "13",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 28
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1983,46 +1983,46 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "17",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "16",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 30
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "Adjudicacion del cuadro comparativo",
-      "duracion": 1,
+      "duracion": 4,
       "area": "COMITE",
       "id": "18",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "17",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 32
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
       "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
-      "duracion": 2,
+      "duracion": 1,
       "area": "DIRECTOR_OBRA",
       "id": "19",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "18",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 36
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2031,46 +2031,46 @@
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "20",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "19",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 37
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
-      "duracion": 2,
+      "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "21",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "19",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 37
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
-      "duracion": 2,
+      "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
       "id": "22",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "21",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 38
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2079,14 +2079,14 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "23",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "22",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 39
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2095,14 +2095,14 @@
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "23",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 41
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2111,14 +2111,14 @@
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "26",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "24",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 42
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2127,14 +2127,14 @@
       "duracion": 2,
       "area": "ADMINISTRATIVO",
       "id": "27",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "26",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 43
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2143,14 +2143,14 @@
       "duracion": 5,
       "area": "CONTRATISTA",
       "id": "28",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "27",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 45
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2159,14 +2159,14 @@
       "duracion": 5,
       "area": "ADMINISTRATIVO",
       "id": "29",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "28",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 45
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2175,14 +2175,14 @@
       "duracion": 1,
       "area": "CONTROL_INTERNO",
       "id": "30",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "29",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 50
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2191,14 +2191,14 @@
       "duracion": 7,
       "area": "DIRECTOR",
       "id": "31",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "30",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 51
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2207,14 +2207,14 @@
       "duracion": 7,
       "area": "ADMINISTRATIVO",
       "id": "32",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "31",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 51
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2223,14 +2223,14 @@
       "duracion": 7,
       "area": "DIRECTOR",
       "id": "33",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "31",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 51
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2239,14 +2239,14 @@
       "duracion": 7,
       "area": "ADMINISTRATIVO",
       "id": "34",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "31",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 51
     }
   ]
 }
