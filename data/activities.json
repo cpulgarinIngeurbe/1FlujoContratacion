@@ -1277,14 +1277,14 @@
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "6",
-      "actividadRelacionada": "5",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 3
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1293,14 +1293,14 @@
       "duracion": 8,
       "area": "CONTRATISTA",
       "id": "7",
-      "actividadRelacionada": "6",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 4
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1309,14 +1309,14 @@
       "duracion": 8,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
-      "actividadRelacionada": "6",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 4
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1332,7 +1332,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 9
     },
     {
       "pestaña": "flujo-srm",
@@ -1348,7 +1348,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 9
     },
     {
       "pestaña": "flujo-srm",
@@ -1364,7 +1364,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 9
     },
     {
       "pestaña": "flujo-srm",
@@ -1380,7 +1380,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 11
     },
     {
       "pestaña": "flujo-srm",
@@ -1396,7 +1396,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 15
+      "startDay": 12
     },
     {
       "pestaña": "flujo-srm",
@@ -1412,7 +1412,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 17
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm",
@@ -1428,7 +1428,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 19
+      "startDay": 16
     },
     {
       "pestaña": "flujo-srm",
@@ -1444,7 +1444,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 21
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1460,7 +1460,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 21
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1476,7 +1476,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 23
+      "startDay": 20
     },
     {
       "pestaña": "flujo-srm",
@@ -1492,7 +1492,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 22
     },
     {
       "pestaña": "flujo-srm",
@@ -1900,7 +1900,7 @@
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "Cotizar Contratista",
-      "duracion": 8,
+      "duracion": 7,
       "area": "CONTRATISTA",
       "id": "12",
       "actividadRelacionada": "11",
@@ -1916,7 +1916,7 @@
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "RECIBO DE COTIZACIÓN",
       "nombreActividad": "revisar cotizacion Residente de obra",
-      "duracion": 8,
+      "duracion": 7,
       "area": "RESIDENTE_TECNICO",
       "id": "13",
       "actividadRelacionada": "12",
@@ -1932,7 +1932,7 @@
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "revisar cotizacion Director de obra ",
-      "duracion": 8,
+      "duracion": 7,
       "area": "DIRECTOR_OBRA",
       "id": "14",
       "actividadRelacionada": "13",
@@ -1958,7 +1958,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 22
+      "startDay": 21
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1974,7 +1974,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 22
+      "startDay": 21
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1990,7 +1990,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 24
+      "startDay": 23
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2006,7 +2006,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 26
+      "startDay": 25
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2022,7 +2022,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 30
+      "startDay": 29
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2038,7 +2038,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 31
+      "startDay": 30
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2054,7 +2054,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 31
+      "startDay": 30
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2070,7 +2070,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 32
+      "startDay": 31
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2086,7 +2086,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 33
+      "startDay": 32
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2102,7 +2102,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 35
+      "startDay": 34
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2118,7 +2118,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 35
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2134,7 +2134,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 37
+      "startDay": 36
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2150,7 +2150,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 39
+      "startDay": 38
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2166,7 +2166,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 39
+      "startDay": 38
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2182,7 +2182,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 43
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2198,7 +2198,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 44
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2214,7 +2214,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 44
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2230,7 +2230,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 44
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2246,7 +2246,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 44
     }
   ]
 }
