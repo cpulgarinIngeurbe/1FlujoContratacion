@@ -1828,7 +1828,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Realizar Negociaciones (Adendas)",
+      "nombreActividad": "REALIZAR NEGOCIACIONES (ADENDAS)",
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "16",
@@ -1844,7 +1844,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "CONCILIACIÓN",
-      "nombreActividad": "Revision ,asignacion 2 ppto de cuadro comparativo ",
+      "nombreActividad": "REVISION, ASIGNACION 2 PPTO CUADRO COMPARATIVO",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "17",
@@ -1860,7 +1860,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Adjudicacion del cuadro comparativo",
+      "nombreActividad": "ADJUDICACION DEL CUADRO COMPARATIVO",
       "duracion": 4,
       "area": "COMITE",
       "id": "18",
@@ -1940,7 +1940,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "PROYECCIÓN",
-      "nombreActividad": "proyeccion de cuadro comparativo",
+      "nombreActividad": "PROYECCION DE CUADRO COMPARATIVO",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "23",
@@ -1956,7 +1956,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO",
-      "nombreActividad": "Generación de  contrato",
+      "nombreActividad": "GENERACION DE CONTRATO",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
