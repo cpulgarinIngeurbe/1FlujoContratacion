@@ -1876,7 +1876,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
-      "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
+      "nombreActividad": "APROBACION CUADRO COMPARATIVO DIRECTOR DE OBRA",
       "duracion": 1,
       "area": "DIRECTOR_OBRA",
       "id": "19",
@@ -1908,7 +1908,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
+      "nombreActividad": "APROBACION CUADRO COMPARATIVO SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "21",
@@ -1924,7 +1924,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
+      "nombreActividad": "APROBACION CUADRO COMPARATIVO GERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
       "id": "22",
@@ -1972,7 +1972,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "APROBACIÓN EN SINCO",
-      "nombreActividad": "Aprobacion en Sinco ADPRO",
+      "nombreActividad": "APROBACION EN SINCO ADPRO",
       "duracion": 1,
       "area": "COSTOS_CONSTRUCCION",
       "id": "26",
@@ -1988,7 +1988,7 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
-      "nombreActividad": "Automatizacion de Firmas Contrato Zoho",
+      "nombreActividad": "AUTOMATIZACION DE FIRMAS CONTRATO ZOHO",
       "duracion": 2,
       "area": "ADMINISTRATIVO",
       "id": "27",
