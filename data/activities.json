@@ -2650,6 +2650,6 @@
       "srm-automatizacion",
       "srm-validado"
     ],
-    "footerButtonsHidden": false
+    "footerButtonsHidden": true
   }
 }

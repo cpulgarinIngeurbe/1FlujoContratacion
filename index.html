@@ -973,8 +973,8 @@
         let hiddenTabs = [];
         try { hiddenTabs = JSON.parse(localStorage.getItem('hiddenTabs') || '[]'); } catch (e) { hiddenTabs = []; }
 
-        let footerButtonsHidden = false;
-        try { footerButtonsHidden = JSON.parse(localStorage.getItem('footerButtonsHidden') || 'false'); } catch (e) { footerButtonsHidden = false; }
+        let footerButtonsHidden = true;
+        try { footerButtonsHidden = JSON.parse(localStorage.getItem('footerButtonsHidden') || 'true'); } catch (e) { footerButtonsHidden = true; }
 
         function applyFooterButtonsVisibility() {
             const row = document.getElementById('footerButtonsRow');
