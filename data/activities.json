@@ -1200,7 +1200,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "BIM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1216,7 +1216,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1232,7 +1232,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "inicio-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1248,7 +1248,7 @@
       "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
@@ -1261,14 +1261,14 @@
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "5",
-      "actividadRelacionada": "4",
+      "actividadRelacionada": "",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 7
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1284,7 +1284,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 9
+      "startDay": 3
     },
     {
       "pestaña": "flujo-srm",
@@ -1300,7 +1300,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 10
+      "startDay": 4
     },
     {
       "pestaña": "flujo-srm",
@@ -1316,7 +1316,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 10
+      "startDay": 4
     },
     {
       "pestaña": "flujo-srm",
@@ -1332,7 +1332,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 12
     },
     {
       "pestaña": "flujo-srm",
@@ -1348,7 +1348,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 12
     },
     {
       "pestaña": "flujo-srm",
@@ -1364,7 +1364,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 12
     },
     {
       "pestaña": "flujo-srm",
@@ -1380,7 +1380,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 20
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm",
@@ -1396,7 +1396,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 21
+      "startDay": 15
     },
     {
       "pestaña": "flujo-srm",
@@ -1412,7 +1412,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 23
+      "startDay": 17
     },
     {
       "pestaña": "flujo-srm",
@@ -1428,7 +1428,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 19
     },
     {
       "pestaña": "flujo-srm",
@@ -1444,7 +1444,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 27
+      "startDay": 21
     },
     {
       "pestaña": "flujo-srm",
@@ -1460,7 +1460,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 27
+      "startDay": 21
     },
     {
       "pestaña": "flujo-srm",
@@ -1476,7 +1476,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 29
+      "startDay": 23
     },
     {
       "pestaña": "flujo-srm",
@@ -1492,7 +1492,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 31
+      "startDay": 25
     },
     {
       "pestaña": "flujo-srm",
@@ -1776,13 +1776,13 @@
       "area": "CONTRATISTA",
       "id": "4",
       "actividadRelacionada": "3",
-      "tipoRelacion": "fin-inicio",
+      "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 5
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1792,13 +1792,13 @@
       "area": "OFICIAL_CUMPLIMIENTO",
       "id": "5",
       "actividadRelacionada": "4",
-      "tipoRelacion": "fin-inicio",
+      "tipoRelacion": "fin-fin",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 6
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1814,7 +1814,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 6
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1830,7 +1830,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 12
+      "startDay": 6
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1846,7 +1846,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 8
+      "startDay": 2
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1862,7 +1862,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 8
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1878,7 +1878,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 16
+      "startDay": 10
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1894,7 +1894,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 20
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1910,7 +1910,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 20
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1926,23 +1926,23 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 20
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "",
       "nombreActividad": "revisar cotizacion Director de obra ",
-      "duracion": 0,
+      "duracion": 8,
       "area": "DIRECTOR_OBRA",
       "id": "14",
       "actividadRelacionada": "13",
-      "tipoRelacion": "fin-inicio",
+      "tipoRelacion": "inicio-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 28
+      "startDay": 14
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1958,7 +1958,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 28
+      "startDay": 22
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1974,7 +1974,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 28
+      "startDay": 22
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -1990,7 +1990,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 30
+      "startDay": 24
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2006,7 +2006,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 32
+      "startDay": 26
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2022,7 +2022,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 30
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2038,7 +2038,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 37
+      "startDay": 31
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2054,7 +2054,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 37
+      "startDay": 31
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2070,7 +2070,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 38
+      "startDay": 32
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2086,7 +2086,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 39
+      "startDay": 33
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2102,14 +2102,14 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 41
+      "startDay": 35
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "APROBACIÓN EN SINCO",
       "nombreActividad": "Aprobacion en Sinco ADPRO",
       "duracion": 1,
-      "area": "DIRECTOR",
+      "area": "COSTOS_CONSTRUCCION",
       "id": "26",
       "actividadRelacionada": "24",
       "tipoRelacion": "fin-inicio",
@@ -2118,7 +2118,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 36
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2134,7 +2134,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 43
+      "startDay": 37
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2146,11 +2146,11 @@
       "actividadRelacionada": "27",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
-      "categoria": "",
+      "categoria": "IA-TECNOLOGIA",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 39
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2166,7 +2166,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 45
+      "startDay": 39
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2182,7 +2182,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 50
+      "startDay": 44
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2198,7 +2198,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 51
+      "startDay": 45
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2214,7 +2214,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 51
+      "startDay": 45
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2230,7 +2230,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 51
+      "startDay": 45
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -2246,7 +2246,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 51
+      "startDay": 45
     }
   ]
 }
