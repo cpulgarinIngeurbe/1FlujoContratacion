@@ -1828,7 +1828,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
+      "nombreActividad": "PRESENTACION CUADRO COMPARATIVO COMITE: Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "16",
@@ -1844,7 +1844,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
+      "nombreActividad": "PRESENTACION CUADRO COMPARATIVO COMITE: Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "17",
@@ -1860,7 +1860,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
+      "nombreActividad": "PRESENTACION CUADRO COMPARATIVO COMITE: Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
       "id": "18",
@@ -1940,7 +1940,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "PROYECCIÓN",
-      "nombreActividad": "proyeccion de cuadro comparativo",
+      "nombreActividad": "PROYECCION: proyeccion de cuadro comparativo",
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "23",
@@ -1956,7 +1956,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO",
-      "nombreActividad": "Generación de  contrato",
+      "nombreActividad": "MIGRACION DE SOLICITUD DE CONTRATO SINCO: Generación de  contrato",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
@@ -1972,7 +1972,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "APROBACIÓN EN SINCO",
-      "nombreActividad": "Aprobacion en Sinco ADPRO",
+      "nombreActividad": "APROBACION EN SINCO: Aprobacion en Sinco ADPRO",
       "duracion": 1,
       "area": "COSTOS_CONSTRUCCION",
       "id": "25",
@@ -2100,7 +2100,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Automatizacion de Firmas Contrato Zoho",
+      "nombreActividad": "IMPRESIÓN DIGITAL, DEPENDE DE LA CANTIDAD DE CONTRATOS ( MINUTAS): Automatizacion de Firmas Contrato Zoho",
       "duracion": 2,
       "area": "ADMINISTRATIVO",
       "id": "33",
