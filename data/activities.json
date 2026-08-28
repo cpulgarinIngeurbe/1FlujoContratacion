@@ -1242,7 +1242,7 @@
       "pestaña": "flujo-srm",
       "capitulo": "",
       "nombreActividad": "LICITACIONES: Creacion licitacion",
-      "duracion": 9,
+      "duracion": 6,
       "area": "RESIDENTE_TECNICO",
       "id": "4",
       "actividadRelacionada": "",
@@ -1261,14 +1261,14 @@
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "5",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "4",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1277,14 +1277,14 @@
       "duracion": 1,
       "area": "DIRECTOR",
       "id": "6",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "5",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 9
     },
     {
       "pestaña": "flujo-srm",
@@ -1293,14 +1293,14 @@
       "duracion": 8,
       "area": "CONTRATISTA",
       "id": "7",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "6",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 10
     },
     {
       "pestaña": "flujo-srm",
@@ -1309,14 +1309,14 @@
       "duracion": 8,
       "area": "RESIDENTE_TECNICO",
       "id": "8",
-      "actividadRelacionada": "",
-      "tipoRelacion": "inicio-inicio",
+      "actividadRelacionada": "6",
+      "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 10
     },
     {
       "pestaña": "flujo-srm",
@@ -1325,14 +1325,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "9",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "8",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1341,14 +1341,14 @@
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "7",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1357,14 +1357,14 @@
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "8",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 18
     },
     {
       "pestaña": "flujo-srm",
@@ -1373,14 +1373,14 @@
       "duracion": 1,
       "area": "COMITE",
       "id": "12",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "11",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 20
     },
     {
       "pestaña": "flujo-srm",
@@ -1389,14 +1389,14 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "13",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "12",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 21
     },
     {
       "pestaña": "flujo-srm",
@@ -1405,14 +1405,14 @@
       "duracion": 2,
       "area": "CONTROL_COSTOS",
       "id": "14",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "13",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 23
     },
     {
       "pestaña": "flujo-srm",
@@ -1421,19 +1421,19 @@
       "duracion": 2,
       "area": "DIRECTOR_OBRA",
       "id": "15",
-      "actividadRelacionada": "",
+      "actividadRelacionada": "14",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 1
+      "startDay": 25
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "16",
@@ -1444,12 +1444,12 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 3
+      "startDay": 27
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
       "duracion": 2,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "17",
@@ -1460,12 +1460,12 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 3
+      "startDay": 27
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
+      "nombreActividad": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ: Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
       "duracion": 2,
       "area": "GERENTE_CONSTRUCCION",
       "id": "18",
@@ -1476,79 +1476,15 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 5
+      "startDay": 29
     },
     {
       "pestaña": "flujo-srm",
       "capitulo": "CREACIÓN DE TERCERO",
-      "nombreActividad": "Adjuntar  diligenciar información contratistas",
+      "nombreActividad": "CREACIÓN DE TERCERO: Adjuntar y diligenciar información contratistas",
       "duracion": 7,
       "area": "CONTRATISTA",
       "id": "19",
-      "actividadRelacionada": "3",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 5
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "",
-      "nombreActividad": "Verificacion de SAGRILAFT",
-      "duracion": 2,
-      "area": "OFICIAL_CUMPLIMIENTO",
-      "id": "20",
-      "actividadRelacionada": "19",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 12
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "",
-      "nombreActividad": "Aprobacion de oficial de cumplimiento ",
-      "duracion": 2,
-      "area": "OFICIAL_CUMPLIMIENTO",
-      "id": "21",
-      "actividadRelacionada": "20",
-      "tipoRelacion": "inicio-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 12
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "",
-      "nombreActividad": "Habilitar provedore A&F",
-      "duracion": 2,
-      "area": "CONTABILIDAD",
-      "id": "22",
-      "actividadRelacionada": "21",
-      "tipoRelacion": "inicio-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 12
-    },
-    {
-      "pestaña": "flujo-srm",
-      "capitulo": "PROYECCIÓN",
-      "nombreActividad": "proyeccion de cuadro comparativo",
-      "duracion": 2,
-      "area": "CONTROL_COSTOS",
-      "id": "23",
       "actividadRelacionada": "18",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
@@ -1556,7 +1492,71 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 7
+      "startDay": 31
+    },
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "",
+      "nombreActividad": "CREACIÓN DE TERCERO: Verificacion de SAGRILAFT",
+      "duracion": 2,
+      "area": "OFICIAL_CUMPLIMIENTO",
+      "id": "20",
+      "actividadRelacionada": "",
+      "tipoRelacion": "fin-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
+    },
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "",
+      "nombreActividad": "CREACIÓN DE TERCERO: Aprobacion de oficial de cumplimiento ",
+      "duracion": 2,
+      "area": "OFICIAL_CUMPLIMIENTO",
+      "id": "21",
+      "actividadRelacionada": "",
+      "tipoRelacion": "inicio-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
+    },
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "",
+      "nombreActividad": "CREACIÓN DE TERCERO: Habilitar provedore A&F",
+      "duracion": 2,
+      "area": "CONTABILIDAD",
+      "id": "22",
+      "actividadRelacionada": "",
+      "tipoRelacion": "inicio-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
+    },
+    {
+      "pestaña": "flujo-srm",
+      "capitulo": "PROYECCIÓN",
+      "nombreActividad": "PROYECCIÓN: proyeccion de cuadro comparativo",
+      "duracion": 2,
+      "area": "CONTROL_COSTOS",
+      "id": "23",
+      "actividadRelacionada": "",
+      "tipoRelacion": "fin-inicio",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
     },
     {
       "pestaña": "flujo-srm",
@@ -1572,7 +1572,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 9
+      "startDay": 3
     },
     {
       "pestaña": "flujo-srm",
@@ -1588,7 +1588,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 10
+      "startDay": 4
     },
     {
       "pestaña": "flujo-srm",
@@ -1604,7 +1604,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 11
+      "startDay": 5
     },
     {
       "pestaña": "flujo-srm",
@@ -1620,7 +1620,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1636,7 +1636,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 13
+      "startDay": 7
     },
     {
       "pestaña": "flujo-srm",
@@ -1652,7 +1652,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 18
+      "startDay": 12
     },
     {
       "pestaña": "flujo-srm",
@@ -1668,7 +1668,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 19
+      "startDay": 13
     },
     {
       "pestaña": "flujo-srm",
@@ -1684,7 +1684,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 19
+      "startDay": 13
     },
     {
       "pestaña": "flujo-srm",
@@ -1700,7 +1700,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 19
+      "startDay": 13
     },
     {
       "pestaña": "flujo-srm",
@@ -1716,7 +1716,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 19
+      "startDay": 13
     }
   ],
   "flujo-srm-parametrizacion": [
