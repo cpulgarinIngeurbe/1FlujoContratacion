@@ -965,7 +965,9 @@
 
     <script>
         const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': [], 'flujo-base': [], 'flujo-base-ref': [], 'flujo-srm-acordado': [], 'flujo-srm-parametrizacion': []};
-        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-base-ref': 'Flujo base (41 días) Ref.', 'flujo-srm-acordado': 'Flujo SRM (50 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización (50 días)', 'comparativo': 'Comparativo Escenarios'};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-base-ref': 'Flujo base (41 días) Ref.', 'flujo-srm-acordado': 'Flujo SRM (50 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización (50 días)', 'comparativo': 'Comparativo Escenarios', 'comparativo2': 'Comparativo'};
+        const COMPARATIVO_TABS = ['comparativo', 'comparativo2'];
+        function isComparativoTab(tabId) { return COMPARATIVO_TABS.includes(tabId); }
         let currentTab = 'optimista';
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
@@ -1355,7 +1357,7 @@
             wrapper.innerHTML = '';
             const scenario = document.createElement('div');
             scenario.className = 'scenario-container active';
-            if (currentTab === 'comparativo') {
+            if (isComparativoTab(currentTab)) {
                 renderComparativo(scenario);
             } else {
                 const container = document.createElement('div');
@@ -1390,7 +1392,7 @@
             const select1 = document.createElement('select');
             select1.id = 'selectComparativoTab1';
             Object.entries(tabConfig).forEach(([key, value]) => {
-                if (key !== 'comparativo') {
+                if (!isComparativoTab(key)) {
                     const option = document.createElement('option');
                     option.value = key;
                     option.textContent = value;
@@ -1410,7 +1412,7 @@
             const select2 = document.createElement('select');
             select2.id = 'selectComparativoTab2';
             Object.entries(tabConfig).forEach(([key, value]) => {
-                if (key !== 'comparativo') {
+                if (!isComparativoTab(key)) {
                     const option = document.createElement('option');
                     option.value = key;
                     option.textContent = value;
@@ -1653,7 +1655,7 @@
         }
 
         function openModal() {
-            if (currentTab === 'comparativo') {
+            if (isComparativoTab(currentTab)) {
                 alert('No puedes agregar actividades desde el Comparativo. Por favor, selecciona un escenario específico.');
                 return;
             }
@@ -1670,7 +1672,7 @@
 
         function populateRelatedActivities() {
             const select = document.getElementById('actividadRelacionada');
-            const tabToUse = currentTab === 'comparativo' ? 'optimista' : currentTab;
+            const tabToUse = isComparativoTab(currentTab) ? 'optimista' : currentTab;
             const currentActivities = activitiesByTab[tabToUse] || [];
             while (select.options.length > 1) {select.remove(1);}
             currentActivities.forEach((act, idx) => {
@@ -1719,7 +1721,7 @@
         }
 
         function showDeleteConfirm(index) {
-            if (currentTab === 'comparativo') {return;}
+            if (isComparativoTab(currentTab)) {return;}
             editActivity(index);
         }
 
