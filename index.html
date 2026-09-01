@@ -1465,10 +1465,18 @@
             let activities2 = activitiesByTab[comparativoTab2] || [];
             activities1 = [...activities1].sort((a, b) => {const aNum = parseInt(a.id.replace(/\D/g, '')) || 0; const bNum = parseInt(b.id.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.id.localeCompare(b.id);});
             activities2 = [...activities2].sort((a, b) => {const aNum = parseInt(a.id.replace(/\D/g, '')) || 0; const bNum = parseInt(b.id.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.id.localeCompare(b.id);});
-            const allIds = new Set();
-            activities1.forEach(act => allIds.add(act.id));
-            activities2.forEach(act => allIds.add(act.id));
-            const rowIds = Array.from(allIds).sort((a, b) => {const aNum = parseInt(a.replace(/\D/g, '')) || 0; const bNum = parseInt(b.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.localeCompare(b);});
+            let rowIds1, rowIds2;
+            if (currentTab === 'comparativo2') {
+                rowIds1 = activities1.map(act => act.id);
+                rowIds2 = activities2.map(act => act.id);
+            } else {
+                const allIds = new Set();
+                activities1.forEach(act => allIds.add(act.id));
+                activities2.forEach(act => allIds.add(act.id));
+                const sharedRowIds = Array.from(allIds).sort((a, b) => {const aNum = parseInt(a.replace(/\D/g, '')) || 0; const bNum = parseInt(b.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.localeCompare(b);});
+                rowIds1 = sharedRowIds;
+                rowIds2 = sharedRowIds;
+            }
             calculateStartDays(activities1);
             calculateStartDays(activities2);
             let maxDays1 = 0;
@@ -1480,10 +1488,10 @@
             const maxDays = Math.max(maxDays1, maxDays2);
             let html = '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;" id="comparativoTimelineContainer">';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; border-right: 2px solid #ddd;" class="escenario-panel" id="escenario1Panel">';
-            html += renderComparativoTimeline(rowIds, activities1, maxDays, 'escenario1', tabConfig[comparativoTab1]);
+            html += renderComparativoTimeline(rowIds1, activities1, maxDays, 'escenario1', tabConfig[comparativoTab1]);
             html += '</div>';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden;" class="escenario-panel" id="escenario2Panel">';
-            html += renderComparativoTimeline(rowIds, activities2, maxDays, 'escenario2', tabConfig[comparativoTab2]);
+            html += renderComparativoTimeline(rowIds2, activities2, maxDays, 'escenario2', tabConfig[comparativoTab2]);
             html += '</div>';
             html += '</div>';
             const tempDiv = document.createElement('div');
