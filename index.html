@@ -844,8 +844,8 @@
                         <option value="srm-automatizacion">Proceso Optimizado SRM+Automatización (41 días)</option>
                         <option value="srm-validado">Proceso Validado SRM+Automatización (46 días)</option>
                         <option value="flujo-base">Flujo base (41 días)</option>
-                        <option value="flujo-srm-acordado">Flujo SRM Acordado</option>
-                        <option value="flujo-srm-parametrizacion">Flujo SRM Parametrización</option>
+                        <option value="flujo-srm-acordado">Flujo SRM Acordado (50 días)</option>
+                        <option value="flujo-srm-parametrizacion">Flujo SRM Parametrización (50 días)</option>
                     </select>
                 </div>
 
@@ -964,7 +964,7 @@
 
     <script>
         const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': [], 'flujo-base': [], 'flujo-srm-acordado': [], 'flujo-srm-parametrizacion': []};
-        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-srm-acordado': 'Flujo SRM Acordado', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización', 'comparativo': 'Comparativo Escenarios'};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-srm-acordado': 'Flujo SRM Acordado (50 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización (50 días)', 'comparativo': 'Comparativo Escenarios'};
         let currentTab = 'optimista';
         let editingActivityId = null;
         let comparativoTab1 = 'optimista';
