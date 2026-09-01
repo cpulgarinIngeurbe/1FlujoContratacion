@@ -1514,7 +1514,7 @@
                 const act = scenarioMap[id];
                 const nombre = act ? act.nombreActividad : '';
                 const enfasis = act && act.enfasis;
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; padding: 8px; display: flex; align-items: center; box-sizing: border-box;"><div style="color: ${enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${enfasis ? 'bold' : 'normal'}; font-size: 11px;">${nombre}</div></div>`;
+                html += `<div class="row" style="flex-shrink: 0; height: 35px; border-bottom: 1px solid #eee; padding: 8px; display: flex; align-items: center; box-sizing: border-box; overflow: hidden;" title="${nombre.replace(/"/g, '&quot;')}"><div style="color: ${enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${enfasis ? 'bold' : 'normal'}; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${nombre}</div></div>`;
             });
             html += '</div>';
             html += '<div class="escala" data-escenario-id="' + escenarioId + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
@@ -1527,7 +1527,7 @@
             rowIds.forEach(id => {
                 const act = scenarioMap[id];
                 if (!act) {
-                    html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div></div>`;
+                    html += `<div class="row" style="flex-shrink: 0; height: 35px; border-bottom: 1px solid #eee; width: ${contentWidth}px;"><div class="timeline" style="position: relative; height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div></div>`;
                     return;
                 }
                 const startDay = act.startDay || 1;
@@ -1550,7 +1550,7 @@
                 } else {
                     barContent = `<div style="display: flex; align-items: center;"><div class="barra" style="margin-left: ${(startDay - 1) * pixelsPerDay}px; width: ${(act.duracion || 0) * pixelsPerDay}px; background-color: ${color}; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; font-weight: bold; position: relative; cursor: pointer;"><div class="tooltip-content">${act.nombreActividad}<br/>Inicio: Día ${startDay}<br/>Fin: Día ${endDay}<br/>Duración: ${act.duracion} días${act.observaciones ? '<br/>' + act.observaciones : ''}</div>${act.duracion}</div>${categoriaBadge}</div>`;
                 }
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">${barContent}</div></div>`;
+                html += `<div class="row" style="flex-shrink: 0; height: 35px; border-bottom: 1px solid #eee; width: ${contentWidth}px;"><div class="timeline" style="position: relative; height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">${barContent}</div></div>`;
             });
             html += '</div>';
             html += '</div>';
