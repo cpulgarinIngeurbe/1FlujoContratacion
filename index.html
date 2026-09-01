@@ -1468,10 +1468,7 @@
             const allIds = new Set();
             activities1.forEach(act => allIds.add(act.id));
             activities2.forEach(act => allIds.add(act.id));
-            const sortedIds = Array.from(allIds).sort((a, b) => {const aNum = parseInt(a.replace(/\D/g, '')) || 0; const bNum = parseInt(b.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.localeCompare(b);});
-            const map1 = {}; activities1.forEach(act => { map1[act.id] = act; });
-            const map2 = {}; activities2.forEach(act => { map2[act.id] = act; });
-            const activities = sortedIds.map(id => map1[id] || map2[id]).filter(Boolean);
+            const rowIds = Array.from(allIds).sort((a, b) => {const aNum = parseInt(a.replace(/\D/g, '')) || 0; const bNum = parseInt(b.replace(/\D/g, '')) || 0; if (aNum !== bNum) return aNum - bNum; return a.localeCompare(b);});
             calculateStartDays(activities1);
             calculateStartDays(activities2);
             let maxDays1 = 0;
@@ -1481,37 +1478,14 @@
             activities2.forEach(act => {maxDays2 = Math.max(maxDays2, (act.startDay || 1) + (act.duracion || 0));});
             maxDays2 = Math.max(maxDays2, 50);
             const maxDays = Math.max(maxDays1, maxDays2);
-            let html = '<div style="display: flex; flex-direction: column; flex: 1; overflow: hidden;">';
-            const pixelsPerDay = 6;
-            const contentWidth = maxDays * pixelsPerDay + 40;
-            html += '<div style="display: flex; flex-shrink: 0; gap: 0;">';
-            html += '<div style="width: 300px; flex-shrink: 0; border-right: 1px solid #ddd; display: flex; flex-direction: column;">';
-            html += '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #bdc3c7;">ACTIVIDADES</div>';
-            html += '<div style="width: 300px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; justify-content: flex-start; border-bottom: 1px solid #bdc3c7; flex-shrink: 0;"></div>';
-            html += '</div>';
-            html += '<div style="flex: 1; border-right: 2px solid #ddd; display: flex; flex-direction: column; overflow: hidden;">';
-            html += '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center;">' + tabConfig[comparativoTab1] + '</div>';
-            html += '<div style="width: ' + contentWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; justify-content: flex-start; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; overflow-x: auto;">' + Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: ${pixelsPerDay}px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('') + '</div>';
-            html += '</div>';
-            html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">';
-            html += '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center;">' + tabConfig[comparativoTab2] + '</div>';
-            html += '<div style="width: ' + contentWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; justify-content: flex-start; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; overflow-x: auto;">' + Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: ${pixelsPerDay}px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('') + '</div>';
-            html += '</div>';
-            html += '</div></div>';
-            html += '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;">';
-            html += '<div class="escala-labels" style="width: 300px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; border-right: 1px solid #ddd;">';
-            activities.forEach((act, idx) => {
-                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; padding: 8px; display: flex; align-items: center;"><div style="color: ${act.enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${act.enfasis ? 'bold' : 'normal'}; font-size: 11px;">${act.nombreActividad}</div></div>`;
-            });
-            html += '</div>';
-            html += '<div style="display: flex; flex: 1; overflow: hidden; gap: 0; min-width: 0;" id="comparativoTimelineContainer">';
+            let html = '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;" id="comparativoTimelineContainer">';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; border-right: 2px solid #ddd;" class="escenario-panel" id="escenario1Panel">';
-            html += renderComparativoTimeline(activities, activities1, maxDays, 'escenario1', maxDays);
+            html += renderComparativoTimeline(rowIds, activities1, maxDays, 'escenario1', tabConfig[comparativoTab1]);
             html += '</div>';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden;" class="escenario-panel" id="escenario2Panel">';
-            html += renderComparativoTimeline(activities, activities2, maxDays, 'escenario2', maxDays);
+            html += renderComparativoTimeline(rowIds, activities2, maxDays, 'escenario2', tabConfig[comparativoTab2]);
             html += '</div>';
-            html += '</div></div></div>';
+            html += '</div>';
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
             while (tempDiv.firstChild) {
@@ -1519,23 +1493,35 @@
             }
         }
 
-        function renderComparativoTimeline(allActivities, scenarioActivities, maxDays, escenarioId, calculatedMaxDays) {
+        function renderComparativoTimeline(rowIds, scenarioActivities, maxDays, escenarioId, scenarioLabel) {
             const scenarioMap = {}; scenarioActivities.forEach(act => { scenarioMap[act.id] = act; });
             const pixelsPerDay = 6;
             const contentWidth = maxDays * pixelsPerDay + 40;
-            let html = '<div class="escala" data-escenario-id="' + escenarioId + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
+            const labelWidth = 220;
+            let html = '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">' + scenarioLabel + '</div>';
+            html += '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;">';
+            html += '<div class="escala-labels" data-escenario-id="' + escenarioId + '" style="width: ' + labelWidth + 'px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; border-right: 1px solid #ddd;">';
+            html += '<div style="width: ' + labelWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; box-sizing: border-box;">Actividad</div>';
+            rowIds.forEach(id => {
+                const act = scenarioMap[id];
+                const nombre = act ? act.nombreActividad : '';
+                const enfasis = act && act.enfasis;
+                html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; padding: 8px; display: flex; align-items: center; box-sizing: border-box;"><div style="color: ${enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${enfasis ? 'bold' : 'normal'}; font-size: 11px;">${nombre}</div></div>`;
+            });
+            html += '</div>';
+            html += '<div class="escala" data-escenario-id="' + escenarioId + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
+            html += '<div style="width: ' + contentWidth + 'px; min-width: ' + contentWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; justify-content: flex-start; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; position: sticky; top: 0; z-index: 8;">' + Array.from({length: maxDays}, (_, i) => i + 1).map(d => `<span style="display: inline-block; width: ${pixelsPerDay}px; text-align: center; font-size: 8px; border-right: 1px solid #555; color: ${(d % 5 === 0 ? '#fff' : '#999')}">${d % 5 === 0 ? d : ''}</span>`).join('') + '</div>';
             html += '<div class="grid-lines" style="position: absolute; top: 0; left: 0; width: ' + contentWidth + 'px; height: 100%; pointer-events: none; display: flex; z-index: 0;">';
             for (let i = 0; i < Math.ceil(maxDays/2); i++) {
                 html += '<div class="grid-line" style="width: ' + (pixelsPerDay * 2) + 'px; height: 100%; border-right: 1px dotted rgba(150, 150, 150, 0.25); box-sizing: border-box;"></div>';
             }
             html += '</div>';
-            allActivities.forEach((act, idx) => {
-                const scenarioAct = scenarioMap[act.id];
-                if (!scenarioAct) {
-                    html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div></div>`;
+            rowIds.forEach(id => {
+                const act = scenarioMap[id];
+                if (!act) {
+                    html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;"></div></div>`;
                     return;
                 }
-                act = scenarioAct;
                 const startDay = act.startDay || 1;
                 const endDay = act.duracion > 0 ? startDay + act.duracion - 1 : startDay;
                 const color = getColorForArea(act.area);
@@ -1559,41 +1545,30 @@
                 html += `<div class="row" style="flex-shrink: 0; border-bottom: 1px solid #eee; min-height: 35px; width: ${contentWidth}px;"><div class="timeline" style="position: relative; min-height: 35px; display: flex; align-items: center; background-color: white; flex: 1; width: 100%;">${barContent}</div></div>`;
             });
             html += '</div>';
+            html += '</div>';
             return html;
         }
 
         function setupScrollSyncComparativo() {
-            const escalaLabels = document.querySelector('.escala-labels');
+            const labels1 = document.querySelector('.escala-labels[data-escenario-id="escenario1"]');
+            const labels2 = document.querySelector('.escala-labels[data-escenario-id="escenario2"]');
             const escala1 = document.querySelector('.escala[data-escenario-id="escenario1"]');
             const escala2 = document.querySelector('.escala[data-escenario-id="escenario2"]');
-            if (escala1 && escala2) {
-                let isScrolling = false;
-                escala1.addEventListener('scroll', function() {
+            const vScrollGroup = [labels1, escala1, labels2, escala2].filter(Boolean);
+            if (!vScrollGroup.length) return;
+            let isScrolling = false;
+            vScrollGroup.forEach(el => {
+                el.addEventListener('scroll', function() {
                     if (isScrolling) return;
                     isScrolling = true;
-                    if (escalaLabels) {escalaLabels.scrollTop = escala1.scrollTop;}
-                    escala2.scrollTop = escala1.scrollTop;
-                    escala2.scrollLeft = escala1.scrollLeft;
+                    vScrollGroup.forEach(other => { if (other !== el) other.scrollTop = el.scrollTop; });
+                    if ((el === escala1 || el === escala2) && escala1 && escala2) {
+                        const other = el === escala1 ? escala2 : escala1;
+                        other.scrollLeft = el.scrollLeft;
+                    }
                     setTimeout(() => { isScrolling = false; }, 10);
                 });
-                escala2.addEventListener('scroll', function() {
-                    if (isScrolling) return;
-                    isScrolling = true;
-                    if (escalaLabels) {escalaLabels.scrollTop = escala2.scrollTop;}
-                    escala1.scrollTop = escala2.scrollTop;
-                    escala1.scrollLeft = escala2.scrollLeft;
-                    setTimeout(() => { isScrolling = false; }, 10);
-                });
-                if (escalaLabels) {
-                    escalaLabels.addEventListener('scroll', function() {
-                        if (isScrolling) return;
-                        isScrolling = true;
-                        escala1.scrollTop = escalaLabels.scrollTop;
-                        escala2.scrollTop = escalaLabels.scrollTop;
-                        setTimeout(() => { isScrolling = false; }, 10);
-                    });
-                }
-            }
+            });
         }
 
         function renderBothViews(container, activities) {
