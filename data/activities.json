@@ -3395,7 +3395,8 @@
     "hiddenTabs": [
       "optimista",
       "srm-automatizacion",
-      "srm-validado"
+      "srm-validado",
+      "flujo-base-ref"
     ],
     "footerButtonsHidden": false
   }
