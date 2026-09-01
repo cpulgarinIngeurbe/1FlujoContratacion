@@ -1588,7 +1588,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CALCULO DE CANTIDADES",
-      "nombreActividad": "CALCULO DE CANTIDADES: Calculo de cantidades",
+      "nombreActividad": "CALCULO DE CANTIDADES",
       "duracion": 4,
       "area": "RESIDENTE_TECNICO",
       "id": "1",
@@ -2112,6 +2112,22 @@
       "enfasis": false,
       "hitoContinuo": false,
       "startDay": 36
+    },
+    {
+      "pestaña": "flujo-srm-acordado",
+      "capitulo": "",
+      "nombreActividad": "",
+      "duracion": 0,
+      "area": "",
+      "id": "1a",
+      "actividadRelacionada": "",
+      "tipoRelacion": "",
+      "holgura": 0,
+      "categoria": "",
+      "observaciones": "",
+      "enfasis": false,
+      "hitoContinuo": false,
+      "startDay": 1
     }
   ],
   "flujo-srm-parametrizacion": [

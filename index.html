@@ -995,6 +995,7 @@
 
         let actividadColWidth = parseInt(localStorage.getItem('actividadColWidth')) || 280;
         let capituloColWidth = parseInt(localStorage.getItem('capituloColWidth')) || 200;
+        let comparativoLabelWidth = parseInt(localStorage.getItem('comparativoLabelWidth')) || 220;
 
         function applyActividadColWidth() {
             const totalWidth = 50 + capituloColWidth + 150 + actividadColWidth;
@@ -1006,18 +1007,24 @@
             document.querySelectorAll('.escala-container > .escala-labels > .header').forEach(el => el.style.width = totalWidth + 'px');
         }
 
+        function applyComparativoLabelWidth() {
+            document.querySelectorAll('.escala-labels[data-escenario-id]').forEach(el => el.style.width = comparativoLabelWidth + 'px');
+            document.querySelectorAll('.comparativo-label-header').forEach(el => el.style.width = comparativoLabelWidth + 'px');
+        }
+
         document.addEventListener('mousedown', function(e) {
             if (!e.target.classList.contains('col-resize-handle')) return;
             e.preventDefault();
             const col = e.target.dataset.col || 'actividad';
             const startX = e.clientX;
-            const startWidth = col === 'capitulo' ? capituloColWidth : actividadColWidth;
+            const startWidth = col === 'capitulo' ? capituloColWidth : (col === 'comparativo-actividad' ? comparativoLabelWidth : actividadColWidth);
             document.body.style.cursor = 'col-resize';
             function onMouseMove(ev) {
                 const delta = ev.clientX - startX;
                 const newWidth = Math.min(600, Math.max(80, startWidth + delta));
-                if (col === 'capitulo') { capituloColWidth = newWidth; } else { actividadColWidth = newWidth; }
-                applyActividadColWidth();
+                if (col === 'capitulo') { capituloColWidth = newWidth; applyActividadColWidth(); }
+                else if (col === 'comparativo-actividad') { comparativoLabelWidth = newWidth; applyComparativoLabelWidth(); }
+                else { actividadColWidth = newWidth; applyActividadColWidth(); }
             }
             function onMouseUp() {
                 document.removeEventListener('mousemove', onMouseMove);
@@ -1026,6 +1033,7 @@
                 try {
                     localStorage.setItem('actividadColWidth', actividadColWidth);
                     localStorage.setItem('capituloColWidth', capituloColWidth);
+                    localStorage.setItem('comparativoLabelWidth', comparativoLabelWidth);
                 } catch (e) {}
             }
             document.addEventListener('mousemove', onMouseMove);
@@ -1454,6 +1462,7 @@
             container.appendChild(legendDiv);
             renderComparativoLayout(container);
             scenario.appendChild(container);
+            applyComparativoLabelWidth();
             setTimeout(() => {
                 setupScrollSyncComparativo();
                 setupTooltips();
@@ -1505,11 +1514,11 @@
             const scenarioMap = {}; scenarioActivities.forEach(act => { scenarioMap[act.id] = act; });
             const pixelsPerDay = 6;
             const contentWidth = maxDays * pixelsPerDay + 40;
-            const labelWidth = 220;
+            const labelWidth = comparativoLabelWidth;
             let html = '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">' + scenarioLabel + '</div>';
             html += '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;">';
             html += '<div class="escala-labels" data-escenario-id="' + escenarioId + '" style="width: ' + labelWidth + 'px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; border-right: 1px solid #ddd;">';
-            html += '<div style="width: ' + labelWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; box-sizing: border-box;">Actividad</div>';
+            html += '<div class="comparativo-label-header" style="width: ' + labelWidth + 'px; background: #34495e; color: white; font-size: 11px; font-weight: bold; height: 35px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #bdc3c7; flex-shrink: 0; box-sizing: border-box; position: relative;">Actividad<div class="col-resize-handle" data-col="comparativo-actividad" title="Arrastra para cambiar el ancho">↔</div></div>';
             rowIds.forEach(id => {
                 const act = scenarioMap[id];
                 const nombre = act ? act.nombreActividad : '';
