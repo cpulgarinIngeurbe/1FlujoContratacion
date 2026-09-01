@@ -1213,7 +1213,7 @@
         const areaLabels = {'DIRECTOR': 'Director de Obra y Residentes', 'RESIDENTE_TECNICO': 'Residente técnico', 'OFICIAL_CUMPLIMIENTO': 'Oficial de cumplimiento', 'CONTABILIDAD': 'Contabilidad', 'RESIDENTE_ADMIN_COMPRAS': 'Residente Administrativo-Compras', 'CONTROL_COSTOS': 'Control de Costos', 'ADMINISTRATIVO': 'Administrativo', 'COMITE': 'Comité', 'CONTRATISTA': 'Contratista', 'TECNICO': 'Técnico/Presupuesto', 'COSTOS_CONSTRUCCION': 'Costos/Construcción', 'CONTROL_INTERNO': 'Control Interno', 'DIRECTOR_OBRA': 'Director de Obra', 'SUBGERENTE_CONSTRUCCION': 'Subgerente de Construcción', 'GERENTE_CONSTRUCCION': 'Gerente de Construcción'};
 
         function getColorForArea(area) {
-            return colorMap[area] || '#34495e';
+            return colorMap[area] || '#ffffff';
         }
 
         function calculateStartDays(activities) {
@@ -1539,7 +1539,9 @@
                 const color = getColorForArea(act.area);
                 let barContent = '';
                 const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
-                if (act.duracion === 0) {
+                if (act.duracion === 0 && !act.nombreActividad) {
+                    barContent = '';
+                } else if (act.duracion === 0) {
                     barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * pixelsPerDay - 6}px; background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 2px solid white; box-shadow: 0 0 3px rgba(0,0,0,0.3);"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div></div>${categoriaBadge}`;
                 } else if (act.hitoContinuo) {
                     let hitosHtml = '<div style="display: flex; align-items: center; gap: 2px;">';
@@ -1628,7 +1630,9 @@
                 const color = getColorForArea(act.area);
                 let barContent = '';
                 const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
-                if (act.duracion === 0) {
+                if (act.duracion === 0 && !act.nombreActividad) {
+                    barContent = '';
+                } else if (act.duracion === 0) {
                     barContent = `<div class="hito" style="margin-left: ${(startDay - 1) * 10 - 6}px; background-color: ${color};"><div class="tooltip-content">${act.nombreActividad}<br/>Día: ${startDay} (Hito)</div></div>${categoriaBadge}`;
                 } else if (act.hitoContinuo) {
                     let hitosHtml = '<div style="display: flex; align-items: center; gap: 4px;">';
