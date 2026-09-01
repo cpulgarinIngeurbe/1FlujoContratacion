@@ -2367,7 +2367,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "CUADRO COMPARATIVO",
-      "nombreActividad": "ELABORACIÓN: realizar el cuadro comparativo ",
+      "nombreActividad": "realizar el cuadro comparativo ",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
       "id": "10",
@@ -2383,7 +2383,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "ELABORACIÓN: Realizar Negociaciones (Adendas)",
+      "nombreActividad": "Realizar Negociaciones (Adendas)",
       "duracion": 2,
       "area": "DIRECTOR",
       "id": "11",
@@ -2399,7 +2399,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "ELABORACIÓN: Adjudicacion del cuadro comparativo",
+      "nombreActividad": "Adjudicacion del cuadro comparativo",
       "duracion": 4,
       "area": "COMITE",
       "id": "12",
@@ -2447,7 +2447,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "PRESENTACIÓN:: Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
+      "nombreActividad": "Aprobacion cuadro comparativo  DIRECTOR DE OBRA",
       "duracion": 1,
       "area": "DIRECTOR_OBRA",
       "id": "15",
@@ -2463,7 +2463,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "PRESENTACIÓN:: Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
+      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
       "duracion": 0,
       "area": "CONTROL_COSTOS",
       "id": "16",
@@ -2479,7 +2479,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "PRESENTACIÓN:: Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
+      "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
       "id": "17",
@@ -2495,7 +2495,7 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "PRESENTACIÓN:: Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
+      "nombreActividad": "Aprobacion cuadro comparativo  GERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "GERENTE_CONSTRUCCION",
       "id": "18",
