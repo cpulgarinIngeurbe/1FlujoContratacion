@@ -3393,10 +3393,12 @@
   ],
   "__viewState": {
     "hiddenTabs": [
-      "optimista",
       "srm-automatizacion",
       "flujo-base-ref",
-      "srm-validado"
+      "srm-validado",
+      "flujo-base",
+      "comparativo",
+      "comparativo2"
     ],
     "footerButtonsHidden": false
   }
