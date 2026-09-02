@@ -3107,7 +3107,7 @@
       "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
       "nombreActividad": "ADJUDICACION DEL CUADRO COMPARATIVO",
       "duracion": 4,
-      "area": "COMITE",
+      "area": "SUBGERENTE_CONSTRUCCION",
       "id": "18",
       "actividadRelacionada": "17",
       "tipoRelacion": "fin-inicio",
