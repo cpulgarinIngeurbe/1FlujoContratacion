@@ -3216,35 +3216,19 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "PROYECCIÓN",
-      "nombreActividad": "PROYECCION DE CUADRO COMPARATIVO",
-      "duracion": 2,
-      "area": "CONTROL_COSTOS",
-      "id": "23",
-      "actividadRelacionada": "22",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 32
-    },
-    {
-      "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO",
       "nombreActividad": "GENERACION DE CONTRATO",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
       "id": "24",
-      "actividadRelacionada": "23",
+      "actividadRelacionada": "22",
       "tipoRelacion": "fin-inicio",
       "holgura": 0,
       "categoria": "SRM",
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 34
+      "startDay": 32
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3260,7 +3244,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 35
+      "startDay": 33
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3276,7 +3260,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 34
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3292,7 +3276,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 38
+      "startDay": 36
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3308,7 +3292,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 38
+      "startDay": 36
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3324,7 +3308,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 43
+      "startDay": 41
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3340,7 +3324,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 42
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3356,7 +3340,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 42
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3372,7 +3356,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 42
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
@@ -3388,7 +3372,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 44
+      "startDay": 42
     }
   ],
   "__viewState": {
