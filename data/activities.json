@@ -2638,22 +2638,6 @@
     },
     {
       "pestaña": "flujo-srm-acordado",
-      "capitulo": "SOLICITUD DE CONTRATACION",
-      "nombreActividad": "PROYECCION: proyeccion de cuadro comparativo",
-      "duracion": 2,
-      "area": "CONTROL_COSTOS",
-      "id": "23",
-      "actividadRelacionada": "",
-      "tipoRelacion": "fin-fin",
-      "holgura": 0,
-      "categoria": "SRM",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 32
-    },
-    {
-      "pestaña": "flujo-srm-acordado",
       "capitulo": "ELABORACION DE CONTRATO",
       "nombreActividad": "MIGRACION DE SOLICITUD DE CONTRATO SINCO: Generación de  contrato",
       "duracion": 1,
