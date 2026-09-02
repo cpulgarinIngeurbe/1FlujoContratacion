@@ -511,6 +511,14 @@
             color: #556B2F;
         }
 
+        .categoria-badge.adpro {
+            color: #556B2F;
+        }
+
+        .categoria-badge.a-f {
+            color: #556B2F;
+        }
+
         .empty-state {
             display: flex;
             flex-direction: column;
@@ -936,6 +944,12 @@
                         <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; margin: 0;">
                             <input type="radio" name="categoria" value="IA-TECNOLOGIA"> IA-TECNOLOGÍA
                         </label>
+                        <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; margin: 0;">
+                            <input type="radio" name="categoria" value="ADPRO"> ADPRO
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 6px; font-weight: normal; margin: 0;">
+                            <input type="radio" name="categoria" value="A&amp;F"> A&amp;F
+                        </label>
                     </div>
                 </div>
 
@@ -970,6 +984,7 @@
         function isComparativoTab(tabId) { return COMPARATIVO_TABS.includes(tabId); }
         let currentTab = 'optimista';
         let editingActivityId = null;
+        let editingActivityRealId = null;
         let comparativoTab1 = 'optimista';
         let comparativoTab2 = 'srm-automatizacion';
 
@@ -1543,7 +1558,7 @@
                 const endDay = act.duracion > 0 ? startDay + act.duracion - 1 : startDay;
                 const color = getColorForArea(act.area);
                 let barContent = '';
-                const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
+                const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase().replace(/[^a-z0-9-]/g, '-')}">${act.categoria}</span>` : '';
                 if (act.duracion === 0 && !act.nombreActividad) {
                     barContent = '';
                 } else if (act.duracion === 0) {
@@ -1623,7 +1638,7 @@
                 const endDay = act.duracion > 0 ? startDay + act.duracion - 1 : startDay;
                 const color = getColorForArea(act.area);
                 let barContent = '';
-                const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase()}">${act.categoria}</span>` : '';
+                const categoriaBadge = act.categoria ? `<span class="categoria-badge ${act.categoria.toLowerCase().replace(/[^a-z0-9-]/g, '-')}">${act.categoria}</span>` : '';
                 if (act.duracion === 0 && !act.nombreActividad) {
                     barContent = '';
                 } else if (act.duracion === 0) {
@@ -1652,6 +1667,7 @@
                 return;
             }
             editingActivityId = null;
+            editingActivityRealId = null;
             document.getElementById('activityForm').reset();
             document.getElementById('btnDelete').style.display = 'none';
             populateRelatedActivities();
@@ -1680,11 +1696,13 @@
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
             editingActivityId = null;
+            editingActivityRealId = null;
         }
 
         function editActivity(index) {
             const activity = activitiesByTab[currentTab][index];
             editingActivityId = index;
+            editingActivityRealId = activity.id;
             document.getElementById('pestaña').value = activity.pestaña;
             document.getElementById('capitulo').value = activity.capitulo || '';
             document.getElementById('nombreActividad').value = activity.nombreActividad;
@@ -1705,8 +1723,11 @@
         }
 
         function deleteActivity() {
-            if (editingActivityId !== null && confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
-                activitiesByTab[currentTab].splice(editingActivityId, 1);
+            if (editingActivityRealId !== null && confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
+                const idx = activitiesByTab[currentTab].findIndex(act => act.id === editingActivityRealId);
+                if (idx !== -1) {
+                    activitiesByTab[currentTab].splice(idx, 1);
+                }
                 closeModal();
                 renderScenarios();
             }
@@ -1720,7 +1741,7 @@
         document.getElementById('activityForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nuevoID = document.getElementById('id').value;
-            const existente = activitiesByTab[currentTab]?.some((act, idx) => act.id === nuevoID && idx !== editingActivityId);
+            const existente = activitiesByTab[currentTab]?.some(act => act.id === nuevoID && act.id !== editingActivityRealId);
             if (existente) {
                 alert('⚠️ Error: Ya existe una actividad con el ID "' + nuevoID + '"');
                 return;
@@ -1742,8 +1763,14 @@
                 startDay: parseInt(document.getElementById('diaInicioManual').value) || 1
             };
             const tabId = activity.pestaña;
-            if (editingActivityId !== null) {
-                activitiesByTab[currentTab][editingActivityId] = activity;
+            if (editingActivityRealId !== null) {
+                const idx = activitiesByTab[currentTab].findIndex(act => act.id === editingActivityRealId);
+                if (idx !== -1) {
+                    activitiesByTab[currentTab][idx] = activity;
+                } else {
+                    if (!activitiesByTab[tabId]) {activitiesByTab[tabId] = [];}
+                    activitiesByTab[tabId].push(activity);
+                }
             } else {
                 if (!activitiesByTab[tabId]) {activitiesByTab[tabId] = [];}
                 activitiesByTab[tabId].push(activity);
