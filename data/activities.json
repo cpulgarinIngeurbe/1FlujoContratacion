@@ -3830,10 +3830,7 @@
       "srm-automatizacion",
       "srm-validado",
       "comparativo",
-      "comparativo2",
-      "revision-control",
-      "flujo-base-ref",
-      "flujo-base"
+      "revision-control"
     ],
     "footerButtonsHidden": false
   }
