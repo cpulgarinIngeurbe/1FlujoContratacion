@@ -3832,7 +3832,8 @@
       "srm-validado",
       "flujo-base",
       "comparativo",
-      "comparativo2"
+      "comparativo2",
+      "revision-control"
     ],
     "footerButtonsHidden": false
   }
