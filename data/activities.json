@@ -3056,7 +3056,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "REALIZAR EL CUADRO COMPARATIVO",
       "duracion": 0,
       "area": "DIRECTOR_OBRA",
@@ -3072,7 +3072,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "REALIZAR NEGOCIACIONES (ADENDAS)",
       "duracion": 2,
       "area": "DIRECTOR",
