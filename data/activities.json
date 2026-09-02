@@ -2495,22 +2495,6 @@
     {
       "pestaña": "flujo-srm-acordado",
       "capitulo": "",
-      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
-      "duracion": 0,
-      "area": "CONTROL_COSTOS",
-      "id": "16",
-      "actividadRelacionada": "",
-      "tipoRelacion": "fin-fin",
-      "holgura": 0,
-      "categoria": "SRM",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 30
-    },
-    {
-      "pestaña": "flujo-srm-acordado",
-      "capitulo": "",
       "nombreActividad": "Aprobacion cuadro comparativo  SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
@@ -3153,22 +3137,6 @@
     {
       "pestaña": "flujo-srm-parametrizacion",
       "capitulo": "APROBACION CUADRO COMPARATIVO",
-      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
-      "duracion": 0,
-      "area": "CONTROL_COSTOS",
-      "id": "20",
-      "actividadRelacionada": "19",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "SRM",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 30
-    },
-    {
-      "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "APROBACION CUADRO COMPARATIVO",
       "nombreActividad": "APROBACION CUADRO COMPARATIVO SUBGERENTE DE CONSTRUCCION",
       "duracion": 1,
       "area": "SUBGERENTE_CONSTRUCCION",
@@ -3359,17 +3327,6 @@
       "startDay": 42
     }
   ],
-  "__viewState": {
-    "hiddenTabs": [
-      "srm-automatizacion",
-      "flujo-base-ref",
-      "srm-validado",
-      "flujo-base",
-      "comparativo",
-      "comparativo2"
-    ],
-    "footerButtonsHidden": false
-  },
   "revision-control": [
     {
       "pestaña": "revision-control",
@@ -3519,7 +3476,7 @@
       "pestaña": "revision-control",
       "capitulo": "REVISIÓN POR ÁREA DE CONTROL DE COSTOS",
       "nombreActividad": "REVISAR LICITACION RESIDENTE DE CONTROL",
-      "duracion": 4,
+      "duracion": 8,
       "area": "CONTROL_COSTOS",
       "id": "10",
       "actividadRelacionada": "9",
@@ -3545,7 +3502,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 18
     },
     {
       "pestaña": "revision-control",
@@ -3561,7 +3518,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 18
     },
     {
       "pestaña": "revision-control",
@@ -3577,7 +3534,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 18
     },
     {
       "pestaña": "revision-control",
@@ -3593,7 +3550,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 14
+      "startDay": 18
     },
     {
       "pestaña": "revision-control",
@@ -3609,7 +3566,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 21
+      "startDay": 25
     },
     {
       "pestaña": "revision-control",
@@ -3625,13 +3582,13 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 21
+      "startDay": 25
     },
     {
       "pestaña": "revision-control",
       "capitulo": "CONCILIACIÓN",
       "nombreActividad": "REVISION, ASIGNACION 2 PPTO y PROYECCION DE CUADRO COMPARATIVO",
-      "duracion": 2,
+      "duracion": 8,
       "area": "CONTROL_COSTOS",
       "id": "17",
       "actividadRelacionada": "16",
@@ -3641,7 +3598,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 23
+      "startDay": 27
     },
     {
       "pestaña": "revision-control",
@@ -3657,7 +3614,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 25
+      "startDay": 35
     },
     {
       "pestaña": "revision-control",
@@ -3673,23 +3630,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 29
-    },
-    {
-      "pestaña": "revision-control",
-      "capitulo": "APROBACION CUADRO COMPARATIVO",
-      "nombreActividad": "Aprobacion cuadro comparativo  RESIDENTE DE CONTROL",
-      "duracion": 0,
-      "area": "CONTROL_COSTOS",
-      "id": "20",
-      "actividadRelacionada": "19",
-      "tipoRelacion": "fin-inicio",
-      "holgura": 0,
-      "categoria": "SRM",
-      "observaciones": "",
-      "enfasis": false,
-      "hitoContinuo": false,
-      "startDay": 30
+      "startDay": 39
     },
     {
       "pestaña": "revision-control",
@@ -3705,7 +3646,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 30
+      "startDay": 40
     },
     {
       "pestaña": "revision-control",
@@ -3721,7 +3662,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 31
+      "startDay": 41
     },
     {
       "pestaña": "revision-control",
@@ -3737,7 +3678,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 32
+      "startDay": 42
     },
     {
       "pestaña": "revision-control",
@@ -3753,7 +3694,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 33
+      "startDay": 43
     },
     {
       "pestaña": "revision-control",
@@ -3769,7 +3710,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 34
+      "startDay": 44
     },
     {
       "pestaña": "revision-control",
@@ -3785,7 +3726,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 46
     },
     {
       "pestaña": "revision-control",
@@ -3801,7 +3742,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 36
+      "startDay": 46
     },
     {
       "pestaña": "revision-control",
@@ -3817,7 +3758,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 41
+      "startDay": 51
     },
     {
       "pestaña": "revision-control",
@@ -3833,7 +3774,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 52
     },
     {
       "pestaña": "revision-control",
@@ -3849,7 +3790,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 52
     },
     {
       "pestaña": "revision-control",
@@ -3865,7 +3806,7 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 52
     },
     {
       "pestaña": "revision-control",
@@ -3881,7 +3822,18 @@
       "observaciones": "",
       "enfasis": false,
       "hitoContinuo": false,
-      "startDay": 42
+      "startDay": 52
     }
-  ]
+  ],
+  "__viewState": {
+    "hiddenTabs": [
+      "srm-automatizacion",
+      "flujo-base-ref",
+      "srm-validado",
+      "flujo-base",
+      "comparativo",
+      "comparativo2"
+    ],
+    "footerButtonsHidden": false
+  }
 }
