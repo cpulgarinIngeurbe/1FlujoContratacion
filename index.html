@@ -854,8 +854,8 @@
                         <option value="srm-validado">Proceso Validado SRM+Automatización (46 días)</option>
                         <option value="flujo-base">Flujo base (41 días)</option>
                         <option value="flujo-base-ref">Flujo base (41 días) Ref.</option>
-                        <option value="flujo-srm-acordado">Flujo SRM (50 días)</option>
-                        <option value="flujo-srm-parametrizacion">Flujo SRM Parametrización (50 días)</option>
+                        <option value="flujo-srm-acordado">Flujo SRM (48 días)</option>
+                        <option value="flujo-srm-parametrizacion">Flujo SRM Parametrización (48 días)</option>
                     </select>
                 </div>
 
@@ -980,7 +980,7 @@
 
     <script>
         const activitiesByTab = {'optimista': [], 'srm-automatizacion': [], 'srm-validado': [], 'flujo-base': [], 'flujo-base-ref': [], 'flujo-srm-acordado': [], 'flujo-srm-parametrizacion': []};
-        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-base-ref': 'Flujo base (41 días) Ref.', 'flujo-srm-acordado': 'Flujo SRM (50 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización (50 días)', 'comparativo': 'Comparativo Escenarios', 'comparativo2': 'Comparativo'};
+        const tabConfig = {'optimista': 'Proceso Actual (91 días)', 'srm-automatizacion': 'Proceso Optimizado SRM+Automatización (41 días)', 'srm-validado': 'Proceso Validado SRM+Automatización (46 días)', 'flujo-base': 'Flujo base (41 días)', 'flujo-base-ref': 'Flujo base (41 días) Ref.', 'flujo-srm-acordado': 'Flujo SRM (48 días)', 'flujo-srm-parametrizacion': 'Flujo SRM Parametrización (48 días)', 'comparativo': 'Comparativo Escenarios', 'comparativo2': 'Comparativo'};
         const COMPARATIVO_TABS = ['comparativo', 'comparativo2'];
         function isComparativoTab(tabId) { return COMPARATIVO_TABS.includes(tabId); }
         let currentTab = 'optimista';
