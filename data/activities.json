@@ -3104,7 +3104,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "REALIZAR CUADRO COMPARATIVO EN FORMATO DE CONTROL",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "ADJUDICACION DEL CUADRO COMPARATIVO",
       "duracion": 4,
       "area": "SUBGERENTE_CONSTRUCCION",
@@ -3120,7 +3120,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "PRESENTACIÓN CUADRO COMPARATIVO COMITÉ",
+      "capitulo": "APROBACION CUADRO COMPARATIVO",
       "nombreActividad": "APROBACION CUADRO COMPARATIVO DIRECTOR DE OBRA",
       "duracion": 1,
       "area": "DIRECTOR_OBRA",
