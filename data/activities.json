@@ -3168,7 +3168,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "MIGRACIÓN DE SOLICITUD DE CONTRATO A SINCO",
+      "capitulo": "MIGRACIÓN SRM A ADPRO",
       "nombreActividad": "GENERACION DE CONTRATO",
       "duracion": 1,
       "area": "RESIDENTE_ADMIN_COMPRAS",
