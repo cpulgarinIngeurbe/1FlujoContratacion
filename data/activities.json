@@ -3024,7 +3024,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "RECIBO DE COTIZACIÓN",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "REVISAR COTIZACION RESIDENTE DE OBRA",
       "duracion": 7,
       "area": "RESIDENTE_TECNICO",
@@ -3040,7 +3040,7 @@
     },
     {
       "pestaña": "flujo-srm-parametrizacion",
-      "capitulo": "RECIBO DE COTIZACIÓN",
+      "capitulo": "CUADRO COMPARATIVO",
       "nombreActividad": "REVISAR COTIZACION DIRECTOR DE OBRA",
       "duracion": 7,
       "area": "DIRECTOR_OBRA",
