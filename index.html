@@ -1514,10 +1514,10 @@
             const maxDays = Math.max(maxDays1, maxDays2);
             let html = '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;" id="comparativoTimelineContainer">';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; border-right: 2px solid #ddd;" class="escenario-panel" id="escenario1Panel">';
-            html += renderComparativoTimeline(rowIds1, activities1, maxDays, 'escenario1', tabConfig[comparativoTab1]);
+            html += renderComparativoTimeline(rowIds1, activities1, maxDays, 'escenario1', tabConfig[comparativoTab1], comparativoTab1);
             html += '</div>';
             html += '<div style="flex: 1; display: flex; flex-direction: column; overflow: hidden;" class="escenario-panel" id="escenario2Panel">';
-            html += renderComparativoTimeline(rowIds2, activities2, maxDays, 'escenario2', tabConfig[comparativoTab2]);
+            html += renderComparativoTimeline(rowIds2, activities2, maxDays, 'escenario2', tabConfig[comparativoTab2], comparativoTab2);
             html += '</div>';
             html += '</div>';
             const tempDiv = document.createElement('div');
@@ -1527,11 +1527,12 @@
             }
         }
 
-        function renderComparativoTimeline(rowIds, scenarioActivities, maxDays, escenarioId, scenarioLabel) {
+        function renderComparativoTimeline(rowIds, scenarioActivities, maxDays, escenarioId, scenarioLabel, scenarioTabId) {
             const scenarioMap = {}; scenarioActivities.forEach(act => { scenarioMap[act.id] = act; });
             const pixelsPerDay = 6;
             const contentWidth = maxDays * pixelsPerDay + 40;
             const labelWidth = comparativoLabelWidth;
+            const textTransform = scenarioTabId === 'flujo-srm-acordado' ? 'uppercase' : 'none';
             let html = '<div style="background: #2c3e50; color: white; padding: 10px 15px; font-weight: bold; font-size: 14px; text-align: center; height: 35px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">' + scenarioLabel + '</div>';
             html += '<div style="display: flex; flex: 1; overflow: hidden; min-width: 0;">';
             html += '<div class="escala-labels" data-escenario-id="' + escenarioId + '" style="width: ' + labelWidth + 'px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; border-right: 1px solid #ddd;">';
@@ -1540,7 +1541,7 @@
                 const act = scenarioMap[id];
                 const nombre = act ? act.nombreActividad : '';
                 const enfasis = act && act.enfasis;
-                html += `<div class="row" style="flex-shrink: 0; height: 35px; border-bottom: 1px solid #eee; padding: 8px; display: flex; align-items: center; box-sizing: border-box; overflow: hidden;" title="${nombre.replace(/"/g, '&quot;')}"><div style="color: ${enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${enfasis ? 'bold' : 'normal'}; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${nombre}</div></div>`;
+                html += `<div class="row" style="flex-shrink: 0; height: 35px; border-bottom: 1px solid #eee; padding: 8px; display: flex; align-items: center; box-sizing: border-box; overflow: hidden;" title="${nombre.replace(/"/g, '&quot;')}"><div style="color: ${enfasis ? '#27ae60' : '#2c3e50'}; font-weight: ${enfasis ? 'bold' : 'normal'}; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: ${textTransform};">${nombre}</div></div>`;
             });
             html += '</div>';
             html += '<div class="escala" data-escenario-id="' + escenarioId + '" style="flex: 1; overflow-y: auto; overflow-x: auto; position: relative; display: flex; flex-direction: column; background: white; min-width: 0;">';
